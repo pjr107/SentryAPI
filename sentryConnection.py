@@ -146,9 +146,56 @@ class Sentry(object):
             else:
                 print "error: {0!s}".format(this_response.text)
 
+        
 
+
+    
+    def UpdateMPEGInput(self, UpdateMPEG, BreakNumber = 20):
+        '''{
+            "jsonrpc":2.0,"method":"Input.UpdateMPEGInput","params":
+            {"inputType":"json","inputSettings":[{"sentryName":"Name or IP",
+            "portnum":13,"sourceIp":"*","groupAddr":"225.215.1.5","destPort":8000,
+            "name":"Port 13","desc":"My port 13","monitorBackup":false,
+            "backupSourceIp":"*","backupGroupAddr":"225.215.2.1","backupDestPort":8001,
+            "vlanId":1069,"mode":"Multicast"}]},"id":1}'''
+
+        '''
+        {"ver":"1.0","jsonrpc":"2.0","code":-32602,"message":"sentryName is a required parameter.","data":null,"cnt":null}
+        {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3",
+            "ip_addr":"10.0.1.14","unit_name":"sentry3","Error":"Port 1155, 1156, 1157, 1158, 1159 are out of the range.","System ID":4}]}
         
-        
+        {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3",
+            "ip_addr":"10.0.1.14","unit_name":"sentry3","response":{"resultCode":"200","resultMsg":"Success"},"System ID":4}]}
+        '''
+        logger.debug("Entering UpdateMPEGInput")
+        InputSettings = ''
+        for num, port in enumerate(UpdateMPEG, start=1):
+            InputSettings += str(json.dumps(port))
+            if num % BreakNumber == 0 or num == len(UpdateMPEG):
+                print InputSettings
+                request = '''{{"jsonrpc":2.0,
+                    "method":"Input.UpdateMPEGInput",
+                    "params":
+                    {{"inputType":"json",
+                    "inputSettings":
+                    [{0!s}]}},"id":1}}'''.format(str(InputSettings))
+                this_response = requests.post(self.requesturl, data=request)
+                sentryUtils.log_response(this_response)
+                '''if stats_load.has_key('result'):
+                    return stats_load['result']
+                else:
+                        raise Exception("Bad response from Sentry {0!s}".format(this_response.text))
+                else:
+                    print "error: {0!s}".format(this_response.text)'''
+                InputSettings = ''
+            else:
+                InputSettings += ','
+
+        logger.debug("Leaving UpdateMPEGInput")
+
+
+        '''
+        '''
         
         
         

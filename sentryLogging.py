@@ -9,7 +9,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 #create console handler and set level to debug
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 ch = logging.StreamHandler()
 #create formatter
 formatter = logging.Formatter('%(levelname)-8s: %(module)-12s %(lineno)4d: %(message)s')

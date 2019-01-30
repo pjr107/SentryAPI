@@ -1,0 +1,135 @@
+{
+    "portnum": 145,
+    "name": "NBAOKC_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "NBAOKC",
+    "providerName": "NBAOKC",
+    "sourceIP": "172.31.1.22",
+    "destPort": 3101
+},
+{
+    "portnum": 146,
+    "name": "NBAORL_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "NBAORL",
+    "providerName": "NBAORL",
+    "sourceIP": "172.31.1.22",
+    "destPort": 3101
+},
+{
+    "portnum": 147,
+    "name": "NBAPHIL_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "NBAPHIL",
+    "providerName": "NBAPHIL",
+    "sourceIP": "172.31.1.22",
+    "destPort": 3101
+},
+{
+    "portnum": 148,
+    "name": "NBAPHX_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "NBAPHX",
+    "providerName": "NBAPHX",
+    "sourceIP": "172.31.1.22",
+    "destPort": 3101
+},
+{
+    "portnum": 149,
+    "name": "NBAPOR_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "NBAPOR",
+    "providerName": "NBAPOR",
+    "sourceIP": "172.31.1.22",
+    "destPort": 3101
+},
+{
+    "portnum": 150,
+    "name": "NBASAC_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "NBASAC",
+    "providerName": "NBASAC",
+    "sourceIP": "172.31.1.24",
+    "destPort": 3101
+},
+{
+    "portnum": 151,
+    "name": "NBASAT_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "NBASAT",
+    "providerName": "NBASAT",
+    "sourceIP": "172.31.1.24",
+    "destPort": 3101
+},
+{
+    "portnum": 152,
+    "name": "NBASFO_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "NBASFO",
+    "providerName": "NBASFO",
+    "sourceIP": "172.31.1.22",
+    "destPort": 3101
+},
+{
+    "portnum": 153,
+    "name": "BEIN8_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "BEIN8",
+    "providerName": "BEIN8",
+    "sourceIP": "172.31.27.23",
+    "destPort": 1234
+},
+{
+    "portnum": 154,
+    "name": "PEOPL_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "PEOPL",
+    "providerName": "PEOPL",
+    "sourceIP": "172.31.27.71",
+    "destPort": 3101
+},
+{
+    "portnum": 155,
+    "name": "RCNTEL_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "RCNTEL",
+    "providerName": "RCNTEL",
+    "sourceIP": "172.31.1.32",
+    "destPort": 3101
+},
+{
+    "portnum": 156,
+    "name": "TMICRO_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "TMICRO",
+    "providerName": "TMICRO",
+    "sourceIP": "172.31.1.31",
+    "destPort": 3101
+},
+{
+    "portnum": 157,
+    "name": "ZEEFAM_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "ZEEFAM",
+    "providerName": "ZEEFAM",
+    "sourceIP": "172.31.1.21",
+    "destPort": 3101
+},
+{
+    "portnum": 158,
+    "name": "AKAAL_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "AKAAL",
+    "providerName": "AKAAL",
+    "sourceIP": "172.31.27.23",
+    "destPort": 1234
+},
+{
+    "portnum": 159,
+    "name": "PPV5_PRI",
+    "sentryName": "10.0.1.14",
+    "program name": "PPV5",
+    "providerName": "PPV5",
+    "sourceIP": "172.31.1.22",
+    "destPort": 3101
+}
