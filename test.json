@@ -133,3 +133,9 @@
     "sourceIP": "172.31.1.22",
     "destPort": 3101
 }
+
+
+
+ 'cat /usr/lib/python3.4/site-packages/brewblox_ctl/presets/services.json | curl -Sk -X POST --header \'Content-Type: application/json\' --header \'Accept: application/json\' --data "@-" https://localhost:4443/datastore/brewblox-ui-store/_bulk_docs'
+ 'cat /usr/lib/python3.4/site-packages/brewblox_ctl/presets/dashboards.json | curl -Sk -X POST --header \'Content-Type: application/json\' --header \'Accept: application/json\' --data "@-" https://localhost:4443/datastore/brewblox-ui-store/_bulk_docs'
+ 'cat /usr/lib/python3.4/site-packages/brewblox_ctl/presets/dashboard-items.json | curl -Sk -X POST --header \'Content-Type: application/json\' --header \'Accept: application/json\' --data "@-" https://localhost:4443/datastore/brewblox-ui-store/_bulk_docs'
