@@ -151,19 +151,27 @@ class Sentry(object):
 
     
     def UpdateMPEGInput(self, UpdateMPEG, BreakNumber = 20):
-        '''{
+        '''
+        Function to talk to Input.UpdateMPEGInput to set the input settings.
+        arguments:
+                UpdateMPEG - List of dicts containing the MPEG input settings
+                BreakNumber - how many port settings to send at a time
+        '''
+        '''
+        example Input.UpdateMPEGInput request
+        {
             "jsonrpc":2.0,"method":"Input.UpdateMPEGInput","params":
             {"inputType":"json","inputSettings":[{"sentryName":"Name or IP",
             "portnum":13,"sourceIp":"*","groupAddr":"225.215.1.5","destPort":8000,
             "name":"Port 13","desc":"My port 13","monitorBackup":false,
             "backupSourceIp":"*","backupGroupAddr":"225.215.2.1","backupDestPort":8001,
-            "vlanId":1069,"mode":"Multicast"}]},"id":1}'''
-
+            "vlanId":1069,"mode":"Multicast"}]},"id":1}
         '''
+        '''
+        example responses from Input.UpdateMPEGInput
         {"ver":"1.0","jsonrpc":"2.0","code":-32602,"message":"sentryName is a required parameter.","data":null,"cnt":null}
         {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3",
             "ip_addr":"10.0.1.14","unit_name":"sentry3","Error":"Port 1155, 1156, 1157, 1158, 1159 are out of the range.","System ID":4}]}
-        
         {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3",
             "ip_addr":"10.0.1.14","unit_name":"sentry3","response":{"resultCode":"200","resultMsg":"Success"},"System ID":4}]}
         '''
@@ -194,34 +202,4 @@ class Sentry(object):
         logger.debug("Leaving UpdateMPEGInput")
 
 
-        '''
-        '''
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        '''while True:
-            this_response = requests.post(self.requesturl, data=request)
-                
-            sentryUtils.log_response(this_response)
-            stats_load = json.loads(this_response.text)
-            try:
-                return stats_load['result']
-            except KeyError as error:
-                #print "error: {0!s}".format(error)
-                #print stats_load["code"]
-                try:
-                    if str(stats_load["code"]) == "-32000": #code -32000 is an early request
-                        print "Made a request too fast waiting a minute"
-                        logger.debug("code: {0!s}".format(stats_load["code"]))
-                        logger.debug("text: {0!s}".format(stats_load["message"]))
-                        sleep(STATS_SLEEP_TIME)
-                    else:
-                        raise Exception("Bad response from Sentry {0!s}".format(this_response.text))
-                except error:
-                    print "error: {0!s}".format(e)'''
+

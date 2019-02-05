@@ -75,21 +75,28 @@ def main():
         if logger.getEffectiveLevel() <= logging.DEBUG:
             print program
         if program['SLING CALL'] and int(program['Sentry Number'].replace("Sentry ","")) <= 3:
+            #primary monitoring
             ProgramDict = {'portnum':int((program['Primary Port']).replace("Port ",""))}
-            ProgramDict['sourceIP'] = str(program['SSM1'])
+            ProgramDict['sourceIp'] = str(program['SSM1'])
             ProgramDict['groupAddr'] = str(program['MULTICAST'])
             ProgramDict['destPort'] = int(program['PORT'])
             ProgramDict['name'] = str(program['SLING CALL']) + str("_PRI")
             ProgramDict['desc'] = str(program['MULTICAST'])
             ProgramDict['sentryName'] = sentrys[int(str(program['Sentry Number']).replace("Sentry ","")) - 1]
             ProgramDict['providerName'] = str(program['SLING CALL'])
-            #ProgramDict['enabled'] = str(program['In Use'])
-            #ProgramDict['Audio_1'] = str(program['Audio_1'])
-            #ProgramDict['Audio_2'] = str(program['Audio_2'])
-            #ProgramDict['userAdded'] = 'true'
+            if str(program['In Use']) == 'Yes':
+                ProgramDict['enabled'] = True
+            else:
+                ProgramDict['enabled'] = False
+            ProgramDict['Audio_1'] = str(program['Audio_1'])
+            ProgramDict['Audio_2'] = str(program['Audio_2'])
+            ProgramDict['userAdded'] = 'true'
+            #write dict to list
             UpdateMPEGInput.append(ProgramDict)
-            ProgramDict = {'portnum':int((program['Backup Port']).replace("Port ",""))}
-            ProgramDict['sourceIP'] = str(program['SSM2'])
+            #Backup monitoring
+            #turning this off because i don't have port 1000+ on test Systems 
+            '''ProgramDict = {'portnum':int((program['Backup Port']).replace("Port ",""))}
+            ProgramDict['sourceIp'] = str(program['SSM2'])
             ProgramDict['groupAddr'] = str(program['MULTICAST'])
             ProgramDict['destPort'] = int(program['PORT'])
             ProgramDict['name'] = str(program['SLING CALL']) + str("_BU")
@@ -97,21 +104,16 @@ def main():
             ProgramDict['desc'] = str(program['MULTICAST'])
             ProgramDict['sentryName'] = sentrys[int(str(program['Sentry Number']).replace("Sentry ","")) - 1]
             ProgramDict['providerName'] = str(program['SLING CALL'])
-            #ProgramDict['enabled'] = str(program['In Use'])
-            #ProgramDict['Audio_1'] = str(program['Audio_1'])
-            #ProgramDict['Audio_2'] = str(program['Audio_2'])
-            #ProgramDict['userAdded'] = 'true'
-            #UpdateMPEGInput.append(ProgramDict)
-            """ProgramDict = {'portnum':str(program['Primary Port']).replace("Port ","")}
-            ProgramDict['sourceIP'] = str(program['SSM1'])
-            ProgramDict['name'] = str(program['SLING CALL']) + str("_PRI")
-            ProgramDict['program name'] = str(program['SLING CALL'])
-            ProgramDict['sentryName'] = sentrys[int(str(program['Sentry Number']).replace("Sentry ","")) - 1]
-            ProgramDict['providerName'] = str(program['SLING CALL'])
-            ProgramDict['enabled'] = str(program['In Use'])
+            if str(program['In Use']) == 'Yes':
+                ProgramDict['enabled'] = True
+            else:
+                ProgramDict['enabled'] = False
             ProgramDict['Audio_1'] = str(program['Audio_1'])
             ProgramDict['Audio_2'] = str(program['Audio_2'])
-            ProgramDict['userAdded'] = 'true'"""
+            ProgramDict['userAdded'] = 'true'
+            #write dict to list
+            UpdateMPEGInput.append(ProgramDict)'''
+
     #print UpdateMPEGInput
     if logger.getEffectiveLevel() <= logging.DEBUG:
         for program in UpdateMPEGInput:
