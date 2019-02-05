@@ -12,6 +12,9 @@ logger.debug("Entering Sentry Utils")
 
 
 def log_response(this_response):
+    """
+    write out all the info in the response from the Sentry/Medius
+    """
     logger.debug("StatusCode: " + str(this_response.status_code))
     logger.debug("Headers: ")
     for header, value in this_response.headers.items():
@@ -24,7 +27,7 @@ def log_response(this_response):
         pass
     logger.debug("Leaving get_program_stats")
 
-def DateRange( startDate, endDate, stepDuration ):
+def DateRange(startDate, endDate, stepDuration):
     """
     Iterate over date range
     Variables
@@ -44,7 +47,7 @@ def DateRange( startDate, endDate, stepDuration ):
             yield startDate - timedelta(seconds=n)
 
 
-def sentryDate(date,xmlFormat=False):
+def sentryDate(date, xmlFormat=False):
     """
     convert date to format needed by sentry
     """
@@ -54,7 +57,7 @@ def sentryDate(date,xmlFormat=False):
     else:
         return date.strftime('%m/%d/%y')
 
-def sentryTime(time,xmlFormat=False):
+def sentryTime(time, xmlFormat=False):
     """
     convert time to format needed by sentry
     """
@@ -65,7 +68,7 @@ def sentryTime(time,xmlFormat=False):
         # 12:00:00 AM
         return time.strftime('%I:%M:%S %p')
 
-def systemDateTime(date,time = '',xmlFormat=False):
+def systemDateTime(date, time = '', xmlFormat=False):
     """
     convert date/time to format needed by system
     """

@@ -8,7 +8,7 @@ Created on Aug 13 2018
 from sentryLogging import logger
 from datetime import datetime, timedelta
 
-logger.debug("Entering Sentry Utils")
+logger.debug("Entering Program stats")
 
 
 
