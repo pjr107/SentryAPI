@@ -174,6 +174,11 @@ class Sentry(object):
             "ip_addr":"10.0.1.14","unit_name":"sentry3","Error":"Port 1155, 1156, 1157, 1158, 1159 are out of the range.","System ID":4}]}
         {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3",
             "ip_addr":"10.0.1.14","unit_name":"sentry3","response":{"resultCode":"200","resultMsg":"Success"},"System ID":4}]}
+         {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry2","ip_addr":"10.0.1.13","unit_name":"sentry2",
+            "Error":"The Source IP for port number 9 (172.31.27.22 ) is invalid.<br>The Source IP for port number 11 (172.31.27.22 ) is invalid.
+            <br>The Source IP for port number 12 (172.31.27.22 ) is invalid.<br>The Source IP for port number 14 (172.31.27.22 ) is invalid.
+            <br>The Source IP for port number 15 (172.31.27.22 ) is invalid.<br>The Source IP for port number 17 (172.31.27.22 ) is invalid.
+            <br>The Source IP for port number 20 (172.31.27.22 ) is invalid.<br>The Source IP for port number 21 (172.31.27.22 ) is invalid.","System ID":3}]
         '''
         logger.debug("Entering UpdateMPEGInput")
         InputSettings = ''
@@ -200,6 +205,55 @@ class Sentry(object):
                 InputSettings += ','
 
         logger.debug("Leaving UpdateMPEGInput")
+
+    def SetProgramMapping(self, ProgramMapping, BreakNumber=20):
+        '''
+        Function to talk to "Program.SetProgramMapping to set the input settings.
+        arguments:
+                UpdateMPEG - List of dicts containing the MPEG input settings
+                BreakNumber - how many port settings to send at a time
+        '''
+        '''
+        example "Program.SetProgramMapping request
+            {
+            "jsonrpc":2.0,
+            "method":"Program.SetProgramMapping",
+            "params":
+            {"inputType":"json","inputSettings":[{"sentryName":"Name or IP","portNumber":"1","programNumber":"1","providerName":"HBO"},
+            {"sentryName":"Name or IP","portNumber":"1","programNumber":"2","providerName":"5StarMAX"},
+            {"sentryName":"Name or IP","portNumber":"1","programNumber":"3","providerName":"MyProvider","userAdded":true}]},
+            "id":1
+            }
+        '''
+        '''
+        example responses from "Program.SetProgramMapping"
+
+        '''
+        logger.debug("Entering ProgramMapping")
+        InputSettings = ''
+        for num, port in enumerate(ProgramMapping, start=1):
+            InputSettings += str(json.dumps(port))
+            if num % BreakNumber == 0 or num == len(ProgramMapping):
+                print InputSettings
+                request = '''{{
+                    "jsonrpc":2.0,
+                    "method":"Program.SetProgramMapping",
+                    "params":
+                    {{"inputType":"json","inputSettings":
+                    [{0!s}]}},"id":1}}'''.format(str(InputSettings))
+                this_response = requests.post(self.requesturl, data=request)
+                sentryUtils.log_response(this_response)
+                '''if stats_load.has_key('result'):
+                    return stats_load['result']
+                else:
+                        raise Exception("Bad response from Sentry {0!s}".format(this_response.text))
+                else:
+                    print "error: {0!s}".format(this_response.text)'''
+                InputSettings = ''
+            else:
+                InputSettings += ','
+
+        logger.debug("Leaving ProgramMapping")
 
 
 
