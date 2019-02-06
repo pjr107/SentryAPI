@@ -255,5 +255,21 @@ class Sentry(object):
 
         logger.debug("Leaving ProgramMapping")
 
+    def getMPEGInput(self):
+        """
+        {{
+            "jsonrpc":2.0,
+            "method":"Input.GetMPEGInput",
+            "params":{"outputType":"json","activeOnly":true,"inputType":"ETH", "vlanIds":[1069]},
+            "id":1
+        }}"""
 
+        request = """{
+                    "jsonrpc":2.0,
+                    "method":"Input.GetMPEGInput",
+                    "params":{"outputType":"json","inputType":"ETH","activeOnly":true},
+                    "id":1
+                    }"""
+        print request
+        sentryUtils.log_response(requests.post(self.requesturl, data=request))
 
