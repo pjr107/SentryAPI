@@ -1,359 +1,382 @@
-DEBUG:sentryLogging:Entering Sentry Utils
-DEBUG:sentryLogging:Entering Sentry Connection
-DEBUG:sentryLogging:Read Dish
-DEBUG:sentryLogging:Entering Read Dish Main
-DEBUG:sentryLogging:Entering Sentry Init
-DEBUG:sentryLogging:Request URL: http://pjr:wombat88@172.16.17.14/vnm-api/index.php
-DEBUG:sentryLogging:leaving Sentry Init
-DEBUG:sentryLogging:Entering UpdateMPEGInput
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:31:08 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"Sentry1","ip_addr":"10.0.1.12","unit_name":"sentry1","response":{"resultCode":"200","resultMsg":"Success"},"System ID":2}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry1', u'ip_addr': u'10.0.1.12', u'region': u'PA', u'System ID': 2, u'location': u'Danville', u'display_name': u'Sentry1', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:31:16 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"Sentry1","ip_addr":"10.0.1.12","unit_name":"sentry1","response":{"resultCode":"200","resultMsg":"Success"},"System ID":2}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry1', u'ip_addr': u'10.0.1.12', u'region': u'PA', u'System ID': 2, u'location': u'Danville', u'display_name': u'Sentry1', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:31:25 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"Sentry1","ip_addr":"10.0.1.12","unit_name":"sentry1","response":{"resultCode":"200","resultMsg":"Success"},"System ID":2}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry1', u'ip_addr': u'10.0.1.12', u'region': u'PA', u'System ID': 2, u'location': u'Danville', u'display_name': u'Sentry1', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:31:34 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"Sentry1","ip_addr":"10.0.1.12","unit_name":"sentry1","response":{"resultCode":"200","resultMsg":"Success"},"System ID":2}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry1', u'ip_addr': u'10.0.1.12', u'region': u'PA', u'System ID': 2, u'location': u'Danville', u'display_name': u'Sentry1', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:31:42 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"Sentry1","ip_addr":"10.0.1.12","unit_name":"sentry1","response":{"resultCode":"200","resultMsg":"Success"},"System ID":2}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry1', u'ip_addr': u'10.0.1.12', u'region': u'PA', u'System ID': 2, u'location': u'Danville', u'display_name': u'Sentry1', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:31:51 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"Sentry1","ip_addr":"10.0.1.12","unit_name":"sentry1","response":{"resultCode":"200","resultMsg":"Success"},"System ID":2}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry1', u'ip_addr': u'10.0.1.12', u'region': u'PA', u'System ID': 2, u'location': u'Danville', u'display_name': u'Sentry1', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:32:00 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"Sentry1","ip_addr":"10.0.1.12","unit_name":"sentry1","response":{"resultCode":"200","resultMsg":"Success"},"System ID":2}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry1', u'ip_addr': u'10.0.1.12', u'region': u'PA', u'System ID': 2, u'location': u'Danville', u'display_name': u'Sentry1', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:32:08 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"Sentry1","ip_addr":"10.0.1.12","unit_name":"sentry1","response":{"resultCode":"200","resultMsg":"Success"},"System ID":2}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry1', u'ip_addr': u'10.0.1.12', u'region': u'PA', u'System ID': 2, u'location': u'Danville', u'display_name': u'Sentry1', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:32:17 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"Sentry1","ip_addr":"10.0.1.12","unit_name":"sentry1","response":{"resultCode":"200","resultMsg":"Success"},"System ID":2},{"region":"PA","location":"Danville","display_name":"sentry2","ip_addr":"10.0.1.13","unit_name":"sentry2","response":{"resultCode":"200","resultMsg":"Success"},"System ID":3}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry1', u'ip_addr': u'10.0.1.12', u'region': u'PA', u'System ID': 2, u'location': u'Danville', u'display_name': u'Sentry1', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}, {u'unit_name': u'sentry2', u'ip_addr': u'10.0.1.13', u'region': u'PA', u'System ID': 3, u'location': u'Danville', u'display_name': u'sentry2', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:32:25 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry2","ip_addr":"10.0.1.13","unit_name":"sentry2","response":{"resultCode":"200","resultMsg":"Success"},"System ID":3}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry2', u'ip_addr': u'10.0.1.13', u'region': u'PA', u'System ID': 3, u'location': u'Danville', u'display_name': u'sentry2', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:32:34 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry2","ip_addr":"10.0.1.13","unit_name":"sentry2","response":{"resultCode":"200","resultMsg":"Success"},"System ID":3}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry2', u'ip_addr': u'10.0.1.13', u'region': u'PA', u'System ID': 3, u'location': u'Danville', u'display_name': u'sentry2', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:32:42 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry2","ip_addr":"10.0.1.13","unit_name":"sentry2","response":{"resultCode":"200","resultMsg":"Success"},"System ID":3}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry2', u'ip_addr': u'10.0.1.13', u'region': u'PA', u'System ID': 3, u'location': u'Danville', u'display_name': u'sentry2', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:32:51 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry2","ip_addr":"10.0.1.13","unit_name":"sentry2","response":{"resultCode":"200","resultMsg":"Success"},"System ID":3}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry2', u'ip_addr': u'10.0.1.13', u'region': u'PA', u'System ID': 3, u'location': u'Danville', u'display_name': u'sentry2', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:32:59 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry2","ip_addr":"10.0.1.13","unit_name":"sentry2","response":{"resultCode":"200","resultMsg":"Success"},"System ID":3}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry2', u'ip_addr': u'10.0.1.13', u'region': u'PA', u'System ID': 3, u'location': u'Danville', u'display_name': u'sentry2', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:33:08 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry2","ip_addr":"10.0.1.13","unit_name":"sentry2","response":{"resultCode":"200","resultMsg":"Success"},"System ID":3}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry2', u'ip_addr': u'10.0.1.13', u'region': u'PA', u'System ID': 3, u'location': u'Danville', u'display_name': u'sentry2', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:33:16 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry2","ip_addr":"10.0.1.13","unit_name":"sentry2","response":{"resultCode":"200","resultMsg":"Success"},"System ID":3}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry2', u'ip_addr': u'10.0.1.13', u'region': u'PA', u'System ID': 3, u'location': u'Danville', u'display_name': u'sentry2', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:33:25 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry2","ip_addr":"10.0.1.13","unit_name":"sentry2","response":{"resultCode":"200","resultMsg":"Success"},"System ID":3},{"region":"PA","location":"Danville","display_name":"sentry3","ip_addr":"10.0.1.14","unit_name":"sentry3","Error":"No response from this sentry.","System ID":4}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry2', u'ip_addr': u'10.0.1.13', u'region': u'PA', u'System ID': 3, u'location': u'Danville', u'display_name': u'sentry2', u'response': {u'resultCode': u'200', u'resultMsg': u'Success'}}, {u'unit_name': u'sentry3', u'ip_addr': u'10.0.1.14', u'region': u'PA', u'System ID': 4, u'location': u'Danville', u'Error': u'No response from this sentry.', u'display_name': u'sentry3'}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:33:28 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3","ip_addr":"10.0.1.14","unit_name":"sentry3","Error":"No response from this sentry.","System ID":4}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry3', u'ip_addr': u'10.0.1.14', u'region': u'PA', u'System ID': 4, u'location': u'Danville', u'Error': u'No response from this sentry.', u'display_name': u'sentry3'}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:33:31 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3","ip_addr":"10.0.1.14","unit_name":"sentry3","Error":"No response from this sentry.","System ID":4}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry3', u'ip_addr': u'10.0.1.14', u'region': u'PA', u'System ID': 4, u'location': u'Danville', u'Error': u'No response from this sentry.', u'display_name': u'sentry3'}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:33:34 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3","ip_addr":"10.0.1.14","unit_name":"sentry3","Error":"No response from this sentry.","System ID":4}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry3', u'ip_addr': u'10.0.1.14', u'region': u'PA', u'System ID': 4, u'location': u'Danville', u'Error': u'No response from this sentry.', u'display_name': u'sentry3'}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:33:37 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3","ip_addr":"10.0.1.14","unit_name":"sentry3","Error":"No response from this sentry.","System ID":4}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry3', u'ip_addr': u'10.0.1.14', u'region': u'PA', u'System ID': 4, u'location': u'Danville', u'Error': u'No response from this sentry.', u'display_name': u'sentry3'}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:33:40 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3","ip_addr":"10.0.1.14","unit_name":"sentry3","Error":"No response from this sentry.","System ID":4}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry3', u'ip_addr': u'10.0.1.14', u'region': u'PA', u'System ID': 4, u'location': u'Danville', u'Error': u'No response from this sentry.', u'display_name': u'sentry3'}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:33:43 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3","ip_addr":"10.0.1.14","unit_name":"sentry3","Error":"No response from this sentry.","System ID":4}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry3', u'ip_addr': u'10.0.1.14', u'region': u'PA', u'System ID': 4, u'location': u'Danville', u'Error': u'No response from this sentry.', u'display_name': u'sentry3'}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:33:46 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3","ip_addr":"10.0.1.14","unit_name":"sentry3","Error":"No response from this sentry.","System ID":4}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry3', u'ip_addr': u'10.0.1.14', u'region': u'PA', u'System ID': 4, u'location': u'Danville', u'Error': u'No response from this sentry.', u'display_name': u'sentry3'}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): 172.16.17.14
-DEBUG:requests.packages.urllib3.connectionpool:"POST /vnm-api/index.php HTTP/1.1" 200 None
-DEBUG:sentryLogging:StatusCode: 200
-DEBUG:sentryLogging:Headers: 
-DEBUG:sentryLogging:    X-Powered-By : PHP/7.0.25
-DEBUG:sentryLogging:    Transfer-Encoding : chunked
-DEBUG:sentryLogging:    Server : nginx/1.10.1
-DEBUG:sentryLogging:    Connection : keep-alive
-DEBUG:sentryLogging:    Date : Tue, 05 Feb 2019 19:33:49 GMT
-DEBUG:sentryLogging:    Content-Type : text/html; charset=UTF-8
-DEBUG:sentryLogging:Encoding: UTF-8
-DEBUG:sentryLogging:Text: {"ver":"1.0","jsonrpc":"2.0","id":1,"result":[{"region":"PA","location":"Danville","display_name":"sentry3","ip_addr":"10.0.1.14","unit_name":"sentry3","Error":"No response from this sentry.","System ID":4}]}
-DEBUG:sentryLogging:{u'jsonrpc': u'2.0', u'ver': u'1.0', u'id': 1, u'result': [{u'unit_name': u'sentry3', u'ip_addr': u'10.0.1.14', u'region': u'PA', u'System ID': 4, u'location': u'Danville', u'Error': u'No response from this sentry.', u'display_name': u'sentry3'}]}
-DEBUG:sentryLogging:Leaving get_program_stats
-DEBUG:sentryLogging:Leaving UpdateMPEGInput
+{
+    "portnum": 142,
+    "name": "JAYA_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "JAYA_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.21",
+    "groupAddr": "232.20.97.132",
+    "desc": "232.20.97.132"
+}, {
+    "portnum": 143,
+    "name": "JAYATV_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "JAYATV_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.21",
+    "groupAddr": "232.20.96.43",
+    "desc": "232.20.96.43"
+}, {
+    "portnum": 144,
+    "name": "JAZMUB_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "JAZMUB_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.21",
+    "groupAddr": "232.20.97.103",
+    "desc": "232.20.97.103"
+}, {
+    "portnum": 145,
+    "name": "BEIN5_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 1234,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "BEIN5_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.27.23",
+    "groupAddr": "232.70.15.5",
+    "desc": "232.70.15.5"
+}, {
+    "portnum": 146,
+    "name": "BEIN6_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 1234,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "BEIN6_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.27.23",
+    "groupAddr": "232.70.15.6",
+    "desc": "232.70.15.6"
+}, {
+    "portnum": 147,
+    "name": "BEIN7_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 1234,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "BEIN7_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.27.23",
+    "groupAddr": "232.70.15.7",
+    "desc": "232.70.15.7"
+}, {
+    "portnum": 148,
+    "name": "WTHRNHD_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "WTHRNHD_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.31",
+    "groupAddr": "232.168.50.128",
+    "desc": "232.168.50.128"
+}, {
+    "portnum": 149,
+    "name": "ZLVINGH_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "ZLVINGH_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.21",
+    "groupAddr": "232.23.41.121",
+    "desc": "232.23.41.121"
+}, {
+    "portnum": 150,
+    "name": "TENIS_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "TENIS_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.32",
+    "groupAddr": "232.168.50.157",
+    "desc": "232.168.50.157"
+}, {
+    "portnum": 151,
+    "name": "IQRAA_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "IQRAA_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.24",
+    "groupAddr": "232.20.214.4",
+    "desc": "232.20.214.4"
+}, {
+    "portnum": 152,
+    "name": "TVBV_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "TVBV_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.21",
+    "groupAddr": "232.20.97.100",
+    "desc": "232.20.97.100"
+}, {
+    "portnum": 153,
+    "name": "ZCINEMA_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "ZCINEMA_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.21",
+    "groupAddr": "232.20.94.142",
+    "desc": "232.20.94.142"
+}, {
+    "portnum": 154,
+    "name": "ZNEWS_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "ZNEWS_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.21",
+    "groupAddr": "232.20.97.84",
+    "desc": "232.20.97.84"
+}, {
+    "portnum": 155,
+    "name": "CSNDC_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 1234,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "CSNDC_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.27.22",
+    "groupAddr": "232.70.2.117",
+    "desc": "232.70.2.117"
+}, {
+    "portnum": 156,
+    "name": "ESPNHD_PRI",
+    "sentryName": "10.0.1.13",
+    "enabled": true,
+    "destPort": 1234,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "ESPNHD_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.27.21",
+    "groupAddr": "232.70.2.11",
+    "desc": "232.70.2.11"
+}, {
+    "portnum": 0,
+    "name": "JIG_PRI",
+    "sentryName": "10.0.1.14",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "JIG_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.21",
+    "groupAddr": "232.33.7.1",
+    "desc": "232.33.7.1"
+}, {
+    "portnum": 1,
+    "name": "JISRTV_PRI",
+    "sentryName": "10.0.1.14",
+    "enabled": true,
+    "destPort": 1234,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "JISRTV_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.27.23",
+    "groupAddr": "232.70.5.15",
+    "desc": "232.70.5.15"
+}, {
+    "portnum": 2,
+    "name": "JK_PRI",
+    "sentryName": "10.0.1.14",
+    "enabled": true,
+    "destPort": 1234,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "JK_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.27.23",
+    "groupAddr": "232.70.5.41",
+    "desc": "232.70.5.41"
+}, {
+    "portnum": 3,
+    "name": "JMAX_PRI",
+    "sentryName": "10.0.1.14",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "JMAX_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.21",
+    "groupAddr": "232.20.97.53",
+    "desc": "232.20.97.53"
+}, {
+    "portnum": 4,
+    "name": "JMOV_PRI",
+    "sentryName": "10.0.1.14",
+    "enabled": true,
+    "destPort": 3101,
+    "programNumber": -1,
+    "userAdded": "true",
+    "providerName": "JMOV_PRI",
+    "Audio_1": "",
+    "Audio_2": "",
+    "sourceIp": "172.31.1.21",
+    "groupAddr": "232.20.118.11",
+    "desc": "232.20.118.11"
+}
+StatusCode: 200
+Headers:
+    X - Powered - By: PHP / 7.0 .25
+Transfer - Encoding: chunked
+Server: nginx / 1.10 .1
+Connection: keep - alive
+Date: Tue, 05 Feb 2019 20: 04: 06 GMT
+Content - Type: text / html;
+charset = UTF - 8
+Encoding: UTF - 8
+Text: {
+    "ver": "1.0",
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": [{
+        "region": "PA",
+        "location": "Danville",
+        "display_name": "sentry2",
+        "ip_addr": "10.0.1.13",
+        "unit_name": "sentry2",
+        "Error": "  Please Enter Port Number.  ",
+        "System ID": 3
+    }, {
+        "region": "PA",
+        "location": "Danville",
+        "display_name": "sentry3",
+        "ip_addr": "10.0.1.14",
+        "unit_name": "sentry3",
+        "Error": "No response from this sentry.",
+        "System ID": 4
+    }]
+}
+
+
+{
+    "sentry": "sentry2",
+    "port_number": "15",
+    "name": "ETVCINE_PRI",
+    "description": "232.70.6.132",
+    "full_name": "Administrator",
+    "created": "2019-01-30 10:10:21.168235-08",
+    "type": "1",
+    "gige_type": "Multicast",
+    "device": "eth",
+    "status": "1",
+    "device_name": "eth",
+    "mc_ip": "232.70.6.132",
+    "mc_port": "1234",
+    "monitor_backup": false,
+    "backup_ssm_mc_ip": "*",
+    "backup_mc_ip": "",
+    "backup_mc_port": "",
+    "checked": "checked",
+    "disabled": "",
+    "ssm_mc_ip": "172.31.27.22",
+    "ssm_mc_port": ""
+}, {
+    "sentry": "sentry2",
+    "port_number": "16",
+    "name": "ETVKN_PRI",
+    "description": "232.20.94.150",
+    "full_name": "Administrator",
+    "created": "2019-01-30 10:10:21.168235-08",
+    "type": "1",
+    "gige_type": "Multicast",
+    "device": "eth",
+    "status": "1",
+    "device_name": "eth",
+    "mc_ip": "232.20.94.150",
+    "mc_port": "3101",
+    "monitor_backup": false,
+    "backup_ssm_mc_ip": "*",
+    "backup_mc_ip": "",
+    "backup_mc_port": "",
+    "checked": "checked",
+    "disabled": "",
+    "ssm_mc_ip": "172.31.1.21",
+    "ssm_mc_port": ""
+}, {
+    "sentry": "sentry2",
+    "port_number": "17",
+    "name": "ETVLIFE_PRI",
+    "description": "232.70.6.134",
+    "full_name": "Administrator",
+    "created": "2019-01-30 10:10:21.168235-08",
+    "type": "1",
+    "gige_type": "Multicast",
+    "device": "eth",
+    "status": "1",
+    "device_name": "eth",
+    "mc_ip": "232.70.6.134",
+    "mc_port": "1234",
+    "monitor_backup": false,
+    "backup_ssm_mc_ip": "*",
+    "backup_mc_ip": "",
+    "backup_mc_port": "",
+    "checked": "checked",
+    "disabled": "",
+    "ssm_mc_ip": "172.31.27.22",
+    "ssm_mc_port": ""
+}

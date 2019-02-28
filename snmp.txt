@@ -1,0 +1,202 @@
+2019-02-07 15:52:36 localhost [UDP: [127.0.0.1]:33433->[127.0.0.1]:162]:
+DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (19821583) 2 days, 7:03:35.83  SNMPv2-MIB::snmpTrapOID.0 = OID:
+MixedSignals::programbitratenotify
+MixedSignals::sentrynameip.1 = STRING: "sentry2 (10.0.1.13)"
+MixedSignals::programnumber.1 = INTEGER: 2
+MixedSignals::programname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::portnumber.1 = INTEGER: 0
+MixedSignals::multicastip.1 = ""
+MixedSignals::multicastport.1 = ""
+MixedSignals::sourcespecificmulticastip.1 = ""
+MixedSignals::unicastport.1 = STRING: "2000"
+MixedSignals::tsid.1 = INTEGER: 1313
+MixedSignals::bitrate.1 = INTEGER: 0
+MixedSignals::date.1 = STRING: "Feb 07, 2019 03:51:55 PM PST"
+MixedSignals::clearreason.1 = INTEGER: 0
+MixedSignals::cleardate.1 = ""
+MixedSignals::setflag.1 = INTEGER: 1
+MixedSignals::alertlogid.1 = INTEGER: 2997
+MixedSignals::portname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::rfchannel.1 = ""
+MixedSignals::rffrequency.1 = ""
+MixedSignals::abrinputurl.1 = ""
+MixedSignals::reporturl.1 = STRING: "http://172-16-17-14.my.local/?page=program_detail&bl=1&range_type=range&start=1549581715&stop=1549585315&port=0&tsid=1313&program=2&sentryID=3&_z=0"
+MixedSignals::pidnumber.1 = INTEGER: 201
+
+2019-02-07 15:52:36 localhost [UDP: [127.0.0.1]:33433->[127.0.0.1]:162]:
+DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (19821583) 2 days, 7:03:35.83  SNMPv2-MIB::snmpTrapOID.0 = OID:
+MixedSignals::programbitratenotify
+MixedSignals::sentrynameip.1 = STRING: "sentry2 (10.0.1.13)"
+MixedSignals::programnumber.1 = INTEGER: 2
+MixedSignals::programname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::portnumber.1 = INTEGER: 0
+MixedSignals::multicastip.1 = ""
+MixedSignals::multicastport.1 = ""
+MixedSignals::sourcespecificmulticastip.1 = ""
+MixedSignals::unicastport.1 = STRING: "2000"
+MixedSignals::tsid.1 = INTEGER: 1313
+MixedSignals::bitrate.1 = INTEGER: 0
+MixedSignals::date.1 = STRING: "Feb 07, 2019 03:51:55 PM PST"
+MixedSignals::clearreason.1 = INTEGER: 0
+MixedSignals::cleardate.1 = ""
+MixedSignals::setflag.1 = INTEGER: 1
+MixedSignals::alertlogid.1 = INTEGER: 2998
+MixedSignals::portname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::rfchannel.1 = ""
+MixedSignals::rffrequency.1 = ""
+MixedSignals::abrinputurl.1 = ""
+MixedSignals::reporturl.1 = STRING: "http://172-16-17-14.my.local/?page=program_detail&bl=1&range_type=range&start=1549581715&stop=1549585315&port=0&tsid=1313&program=2&sentryID=3&_z=0"
+MixedSignals::pidnumber.1 = INTEGER: 202
+
+2019-02-07 15:52:36 localhost [UDP: [127.0.0.1]:33433->[127.0.0.1]:162]:
+DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (19821583) 2 days, 7:03:35.83  SNMPv2-MIB::snmpTrapOID.0 = OID:
+MixedSignals::programbitratenotify
+MixedSignals::sentrynameip.1 = STRING: "sentry2 (10.0.1.13)"
+MixedSignals::programnumber.1 = INTEGER: 2
+MixedSignals::programname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::portnumber.1 = INTEGER: 0
+MixedSignals::multicastip.1 = ""
+MixedSignals::multicastport.1 = ""
+MixedSignals::sourcespecificmulticastip.1 = ""
+MixedSignals::unicastport.1 = STRING: "2000"
+MixedSignals::tsid.1 = INTEGER: 1313
+MixedSignals::bitrate.1 = INTEGER: 0
+MixedSignals::date.1 = STRING: "Feb 07, 2019 03:51:55 PM PST"
+MixedSignals::clearreason.1 = INTEGER: 0
+MixedSignals::cleardate.1 = ""
+MixedSignals::setflag.1 = INTEGER: 1
+MixedSignals::alertlogid.1 = INTEGER: 2999
+MixedSignals::portname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::rfchannel.1 = ""
+MixedSignals::rffrequency.1 = ""
+MixedSignals::abrinputurl.1 = ""
+MixedSignals::reporturl.1 = STRING: "http://172-16-17-14.my.local/?page=program_detail&bl=1&range_type=range&start=1549581715&stop=1549585315&port=0&tsid=1313&program=2&sentryID=3&_z=0"
+MixedSignals::pidnumber.1 = INTEGER: -1
+
+2019-02-07 15:52:57 localhost [UDP: [127.0.0.1]:45575->[127.0.0.1]:162]:
+DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (19823679) 2 days, 7:03:56.79  SNMPv2-MIB::snmpTrapOID.0 = OID:
+MixedSignals::programvideofreezenotify
+MixedSignals::sentrynameip.1 = STRING: "sentry2 (10.0.1.13)"
+MixedSignals::programnumber.1 = INTEGER: 2
+MixedSignals::programname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::portnumber.1 = INTEGER: 0
+MixedSignals::multicastip.1 = ""
+MixedSignals::multicastport.1 = ""
+MixedSignals::sourcespecificmulticastip.1 = ""
+MixedSignals::unicastport.1 = STRING: "2000"
+MixedSignals::tsid.1 = INTEGER: 1313
+MixedSignals::pidnumber.1 = INTEGER: 201
+MixedSignals::lengthoftime.1 = INTEGER: 30070
+MixedSignals::date.1 = STRING: "Feb 07, 2019 03:52:23 PM PST"
+MixedSignals::clearreason.1 = INTEGER: 0
+MixedSignals::cleardate.1 = ""
+MixedSignals::setflag.1 = INTEGER: 1
+MixedSignals::alertlogid.1 = INTEGER: 3000
+MixedSignals::portname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::alertreasons.1 = ""
+MixedSignals::rfchannel.1 = ""
+MixedSignals::rffrequency.1 = ""
+MixedSignals::abrinputurl.1 = ""
+MixedSignals::reporturl.1 = STRING: "http://172-16-17-14.my.local/?page=program_detail&bl=1&range_type=range&start=1549581743&stop=1549585343&port=0&tsid=1313&program=2&sentryID=3&_z=0"
+
+
+2019-02-07 15:55:01 localhost [UDP: [127.0.0.1]:59008->[127.0.0.1]:162]:
+DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (19836084) 2 days, 7:06:00.84  SNMPv2-MIB::snmpTrapOID.0 = OID:
+MixedSignals::programbitratenotify
+MixedSignals::sentrynameip.1 = STRING: "sentry2 (10.0.1.13)"
+MixedSignals::programnumber.1 = INTEGER: 2
+MixedSignals::programname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::portnumber.1 = INTEGER: 0
+MixedSignals::multicastip.1 = ""
+MixedSignals::multicastport.1 = ""
+MixedSignals::sourcespecificmulticastip.1 = ""
+MixedSignals::unicastport.1 = STRING: "2000"
+MixedSignals::tsid.1 = INTEGER: 1313
+MixedSignals::bitrate.1 = INTEGER: 0
+MixedSignals::date.1 = STRING: "Feb 07, 2019 03:51:55 PM PST"
+MixedSignals::clearreason.1 = INTEGER: 1
+MixedSignals::cleardate.1 = STRING: "Feb 07, 2019 03:54:20 PM PST"
+MixedSignals::setflag.1 = INTEGER: 0
+MixedSignals::alertlogid.1 = INTEGER: 2997
+MixedSignals::portname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::rfchannel.1 = ""
+MixedSignals::rffrequency.1 = ""
+MixedSignals::abrinputurl.1 = ""
+MixedSignals::reporturl.1 = STRING: "http://172-16-17-14.my.local/?page=program_detail&bl=1&range_type=range&start=1549581860&stop=1549585460&port=0&tsid=1313&program=2&sentryID=3&_z=0"
+MixedSignals::pidnumber.1 = INTEGER: 201
+
+2019-02-07 15:55:01 localhost [UDP: [127.0.0.1]:59008->[127.0.0.1]:162]:
+DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (19836084) 2 days, 7:06:00.84  SNMPv2-MIB::snmpTrapOID.0 = OID:
+MixedSignals::programbitratenotify
+MixedSignals::sentrynameip.1 = STRING: "sentry2 (10.0.1.13)"
+MixedSignals::programnumber.1 = INTEGER: 2
+MixedSignals::programname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::portnumber.1 = INTEGER: 0
+MixedSignals::multicastip.1 = ""
+MixedSignals::multicastport.1 = ""
+MixedSignals::sourcespecificmulticastip.1 = ""
+MixedSignals::unicastport.1 = STRING: "2000"
+MixedSignals::tsid.1 = INTEGER: 1313
+MixedSignals::bitrate.1 = INTEGER: 0
+MixedSignals::date.1 = STRING: "Feb 07, 2019 03:51:55 PM PST"
+MixedSignals::clearreason.1 = INTEGER: 1
+MixedSignals::cleardate.1 = STRING: "Feb 07, 2019 03:54:20 PM PST"
+MixedSignals::setflag.1 = INTEGER: 0
+MixedSignals::alertlogid.1 = INTEGER: 2998
+MixedSignals::portname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::rfchannel.1 = ""
+MixedSignals::rffrequency.1 = ""
+MixedSignals::abrinputurl.1 = ""
+MixedSignals::reporturl.1 = STRING: "http://172-16-17-14.my.local/?page=program_detail&bl=1&range_type=range&start=1549581860&stop=1549585460&port=0&tsid=1313&program=2&sentryID=3&_z=0"
+MixedSignals::pidnumber.1 = INTEGER: 202
+
+2019-02-07 15:55:01 localhost [UDP: [127.0.0.1]:59008->[127.0.0.1]:162]:
+DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (19836084) 2 days, 7:06:00.84  SNMPv2-MIB::snmpTrapOID.0 = OID:
+MixedSignals::programbitratenotify
+MixedSignals::sentrynameip.1 = STRING: "sentry2 (10.0.1.13)"
+MixedSignals::programnumber.1 = INTEGER: 2
+MixedSignals::programname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::portnumber.1 = INTEGER: 0
+MixedSignals::multicastip.1 = ""
+MixedSignals::multicastport.1 = ""
+MixedSignals::sourcespecificmulticastip.1 = ""
+MixedSignals::unicastport.1 = STRING: "2000"
+MixedSignals::tsid.1 = INTEGER: 1313
+MixedSignals::bitrate.1 = INTEGER: 0
+MixedSignals::date.1 = STRING: "Feb 07, 2019 03:51:55 PM PST"
+MixedSignals::clearreason.1 = INTEGER: 1
+MixedSignals::cleardate.1 = STRING: "Feb 07, 2019 03:54:20 PM PST"
+MixedSignals::setflag.1 = INTEGER: 0
+MixedSignals::alertlogid.1 = INTEGER: 2999
+MixedSignals::portname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::rfchannel.1 = ""
+MixedSignals::rffrequency.1 = ""
+MixedSignals::abrinputurl.1 = ""
+MixedSignals::reporturl.1 = STRING: "http://172-16-17-14.my.local/?page=program_detail&bl=1&range_type=range&start=1549581860&stop=1549585460&port=0&tsid=1313&program=2&sentryID=3&_z=0"
+MixedSignals::pidnumber.1 = INTEGER: -1
+
+2019-02-07 15:55:01 localhost [UDP: [127.0.0.1]:59008->[127.0.0.1]:162]:
+DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (19836084) 2 days, 7:06:00.84  SNMPv2-MIB::snmpTrapOID.0 = OID:
+MixedSignals::programvideofreezenotify
+MixedSignals::sentrynameip.1 = STRING: "sentry2 (10.0.1.13)"
+MixedSignals::programnumber.1 = INTEGER: 2
+MixedSignals::programname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::portnumber.1 = INTEGER: 0
+MixedSignals::multicastip.1 = ""
+MixedSignals::multicastport.1 = ""
+MixedSignals::sourcespecificmulticastip.1 = ""
+MixedSignals::unicastport.1 = STRING: "2000"
+MixedSignals::tsid.1 = INTEGER: 1313
+MixedSignals::pidnumber.1 = INTEGER: 201
+MixedSignals::lengthoftime.1 = INTEGER: 30070
+MixedSignals::date.1 = STRING: "Feb 07, 2019 03:52:23 PM PST"
+MixedSignals::clearreason.1 = INTEGER: 1
+MixedSignals::cleardate.1 = STRING: "Feb 07, 2019 03:54:30 PM PST"
+MixedSignals::setflag.1 = INTEGER: 0
+MixedSignals::alertlogid.1 = INTEGER: 3000
+MixedSignals::portname.1 = STRING: "ESPNUHD_PRI"
+MixedSignals::alertreasons.1 = ""
+MixedSignals::rfchannel.1 = ""
+MixedSignals::rffrequency.1 = ""
+MixedSignals::abrinputurl.1 = ""
+MixedSignals::reporturl.1 = STRING: "http://172-16-17-14.my.local/?page=program_detail&bl=1&range_type=range&start=1549581870&stop=1549585470&port=0&tsid=1313&program=2&sentryID=3&_z=0"

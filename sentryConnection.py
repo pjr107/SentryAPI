@@ -94,7 +94,7 @@ class Sentry(object):
 
 
     def get_program_stats(self,
-                          types="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30",
+                          types="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
                           fromdate="12/19/18",
                           todate="12/20/18",
                           fromtime="06:00:00 PM",
@@ -125,9 +125,45 @@ class Sentry(object):
                     "availabilityProduct":"sentry"}}
         }}'''.format(fromdate, fromtime, todate, totime, types)
         logger.debug(request)
+        return self.request_program_stats(request=request)
+
+
+    def get_program_stats_span(self,
+                          types="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
+                          span="1 minute",
+                          availability_product="medius"):
+        """
+        Get Stats - Pull statistics for specific time period, can do multiple reports of a duration
+
+        Variables:
+        types - KPI types
+        span - length of report
+        availabilityProduct - where to read avability from
+
+        """
+        logger.debug("Entering get_program_stats_span")
+        request = '''{{
+            "id":1,
+            "jsonrpc":2.0,
+            "method":"Report.GetProgramStatistics",
+                    "params":{{
+                    "outputType":"json",
+                    "types":[{0!s}],
+                    "span":[{1!s}],
+                    "availabilityProduct":"sentry"}}
+        }}'''.format(types, span, availability_product)
+        logger.debug(request)
+        stats_load = self.request_program_stats(request=request)
+        logger.debug("Leaving get_program_stats_span")
+        return stats_load
+
+
+
+    def request_program_stats(self, request):
         '''need to make sure the request is good
            and check for an early request
         '''
+        logger.debug("Entering request_program_stats")
         while True:
             this_response = requests.post(self.requesturl, data=request)
 
@@ -145,6 +181,9 @@ class Sentry(object):
                     raise Exception("Bad response from Sentry {0!s}".format(this_response.text))
             else:
                 print "error: {0!s}".format(this_response.text)
+        logger.debug("Entering request_program_stats")
+        return stats_load
+
 
         
 

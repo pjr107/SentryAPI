@@ -8,7 +8,189 @@ Created on Jan 3 2019
 import argparse
 import logging
 import json
+#import prometheus_client
 import sentryConnection
 from sentryLogging import logger
+#from prometheus_client.core import GaugeMetricFamily, CounterMetricFamily, REGISTRY
+from prometheus_client import Gauge
+
+"""
+    port_number: 3010
+    port_name: Port 3010
+    transport_number: 1
+    program_number: 2
+    program_name: Weerkanaal redundant
+    video_format: MPEG-2
+    primary_video_pid_number: 33
+    audio_mode: BS.1770-3\/3 sec
+    port_info: 225.21.11.1:8000
+    port_source_info: *
+    device_info: LAN 2
+    rpt_start_date_yyyymmdd: 20190206
+    rpt_start_time: 11:19:57-08:00
+    rpt_end_date_yyyymmdd: 20190206
+    rpt_end_time: 12:19:57-08:00
+    scrambled: N
+    used_backup: N
+
+    hd_flag: SD
+
+    average_video_quality: 91.2916
+    max_video_quality: 100
+    min_video_quality: 5
+
+    min_idr:
+    avg_idr:
+    max_idr:
+    min_ebp:
+    avg_ebp:
+    max_ebp:
+
+    primary_audio_pid_number: 34
+    audio_pid_lang: eng
+    audio_format: MPEG-1 Layer II
+    average_audio_quality: 96.7085
+    max_audio_quality: 100
+    min_audio_quality: 41
+    average_volume_level: -24.7768
+    max_volume_level: -13.7481
+    min_volume_level: -73.1743
+    average_dialnorm:
+    distance_from_dialnorm:
+
+    audio_pid_number_2nd:
+    audio_pid_lang_2nd:
+    audio_format_2nd:
+    avg_aqoe_2nd:
+    min_aqoe_2nd:
+    max_aqoe_2nd:
+    avg_volume_lvl_2nd:
+    max_volume_lvl_2nd:
+    min_volume_lvl_2nd:
+    avg_dialnorm_2nd:
+    dist_from_dialnorm_2nd:
+
+    average_bitrate: 5291865.2303
+    min_bitrate: 76627.0000
+    max_bitrate: 5384871.0000
+
+    discontinuity_count: 0
+
+    average_gop_length: 12.00
+    min_gop_length: 3
+    max_gop_length: 20
+
+    min_perceptual_video_quality: 
+    average_perceptual_video_quality: 
+    max_perceptual_video_quality: 
+
+    availability_percent: 74.777778
+    error_seconds: 908
+
+    ad_cue_out_events: 0
+
+    closed_caption_percent: 0.0000
+    cc_error_pct: 0.0000
+    cc_valid_pct: 0.0000
+    cc_608_pct: 0.0000
+    cc_608_error_pct: 0.0000
+    cc_608_valid_pct: 0.0000
+    cc_708_pct: 0.0000
+    cc_708_error_pct: 0.0000
+    cc_708_valid_pct: 0.0000
+    cc_scte_pct: 0.0000
+    cc_scte_error_pct: 0.0000
+    cc_scte_valid_pct: 0.0000
+
+    rep_index:
+    manifest_bitrate:
+    avg_frag_duration:
+    min_frag_size:
+    avg_frag_size:
+    max_frag_size:
+
+    min_frag_load_time:
+    avg_frag_load_time:
+    max_frag_load_time:
+
+    min_frag_load_bitrate:
+    avg_frag_load_bitrate:
+    max_frag_load_bitrate:
+
+    min_frag_load_latency:
+    avg_frag_load_latency:
+    max_frag_load_latency:
+
+    frag_httpstat_100:
+    frag_httpstat_200:
+    frag_httpstat_300:
+    frag_httpstat_400:
+    frag_httpstat_500:
+    frag_httpstat_600:
+
+    >  --name graphite\
+>  --restart=always\
+>  -p 80:80\
+>  -p 2003-2004:2003-2004\
+>  -p 2023-2024:2023-2024\
+>  -p 8125:8125/udp\
+>  -p 8126:8126\
+>  graphiteapp/graphite-statsd
+labels=['port_number','port_name','transport_number', 'program_number','program_name','port_info','port_source_info','device_info']
+
+"""
 
 
+def write_data(single_record):
+    
+    g = Gauge('video_quality', 'average_video_quality',['port_number','port_name','transport_number', 'program_number','program_name','port_info','port_source_info','device_info'])
+    g.set(single_record['average_video_quality'])
+
+def process_json(data):
+    for row in data:
+        print row['program_name']
+
+
+def main():
+    '''
+    main function
+    '''
+    logger.debug("Entering Get program stats Main")
+    parser = argparse.ArgumentParser(description='Import new settings', add_help=True)
+    parser.add_argument('--file','-f' , dest='file', help='File to read', default="Sling.csv")
+    parser.add_argument('--system', '-s', dest='system', help='URL of Sentry/s', required=True)
+    parser.add_argument('--userName', '-u', dest='userName', help='userName for login', required=True)
+    parser.add_argument('--password', '-p', dest='password', help='password for login', required=True)
+    parser.add_argument('--duration', '-D', dest='duration', help='length of reports in seconds', required=True)
+
+
+    results = parser.parse_args()
+
+    sentrys = []
+
+    for item in results.system.split(','):
+        sentrys.append(sentryConnection.Sentry(tekip=(item.strip()),
+                                               medius=False,
+                                               user=results.userName,
+                                               passwd=results.password))
+
+    for Sentry in sentrys:
+        print "Doing Sentry: {0!s}".format(Sentry.tekip)
+        # Get the stats, this will return JSON
+        try:
+            stats_load = (Sentry.get_program_stats_span(span=results.duration))
+            #logger.debug(stats_load)
+            #print stats_load
+
+        except:
+            print "Cannot connect to {0!s}".format(Sentry.tekip)
+        process_json(stats_load)
+
+    
+    logger.debug("leaving Get program stats Main")
+
+
+
+
+if __name__ == '__main__':
+    main()

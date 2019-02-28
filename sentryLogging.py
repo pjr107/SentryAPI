@@ -6,10 +6,10 @@ Created on Aug 13 2018
 '''
 import logging
 
-logging.basicConfig(filename='debug.txt',
+logging.basicConfig(filename='debug.json',
                         filemode='a',
                         formatter='%(levelname)-8s: %(module)-12s %(lineno)4d: %(message)s',
-                        level=logging.DEBUG)
+                        level=logging.INFO)
 logger = logging.getLogger(__name__)
 #create console handler and set level to debug
 #logger.setLevel(logging.DEBUG)
