@@ -1,4 +1,20 @@
 {
+"jsonrpc":2.0,
+"method":"Input.ClearMPEGInputByConnection",
+"params":
+{"inputType":"json","inputSettings":
+[{"sentryName":"10.0.1.14","inputConnections":["Ethernet 1"]},
+{"sentryName":"10.0.1.13","inputConnections":["Ethernet 1"]},
+{"sentryName":"10.0.1.12","inputConnections":["Ethernet 1"]},
+]},
+"id":1
+}
+			
+	
+
+
+
+{
     "portnum": 142,
     "name": "JAYA_PRI",
     "sentryName": "10.0.1.13",

@@ -151,6 +151,7 @@ def process_json(data):
         print row['program_name']
 
 
+
 def main():
     '''
     main function
@@ -184,7 +185,9 @@ def main():
 
         except:
             print "Cannot connect to {0!s}".format(Sentry.tekip)
-        process_json(stats_load)
+        #process_json(stats_load)
+        for key, value in stats_load[0].items():
+            print key, value
 
     
     logger.debug("leaving Get program stats Main")

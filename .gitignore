@@ -1,1 +1,7 @@
 *.pyc
+DishProgram/readDish.build/
+DishProgram/readDish.dist/
+debug.json
+DishProgram/debug.json
+test.build/
+test.dist/
