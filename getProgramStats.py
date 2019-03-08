@@ -152,7 +152,7 @@ def process_json(data, Sentry):
 
         cur = conn.cursor()
         for row in data:
-            row['sentry'] = Sentry
+            row['sentry_ip'] = Sentry
             row['rpt_start'] = "{0!s} {1!s}".format(row['rpt_start_date_yyyymmdd'], row['rpt_start_time'])
             row['rpt_end'] = "{0!s} {1!s}".format(row['rpt_end_date_yyyymmdd'], row['rpt_end_time'])
             del row['rpt_start_date_yyyymmdd']
@@ -212,7 +212,7 @@ def main():
         stats_load = (Sentry.get_program_stats_span(span="1 minute"))
         #logger.debug(stats_load)
         #print stats_load
-        process_json(stats_load, Sentry)
+        process_json(stats_load, Sentry.tekip)
 
         #except:
         #    print "Cannot connect to {0!s}".format(Sentry.tekip)
