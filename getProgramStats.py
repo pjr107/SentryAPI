@@ -11,8 +11,9 @@ import json
 #import prometheus_client
 import sentryConnection
 from sentryLogging import logger
-#from prometheus_client.core import GaugeMetricFamily, CounterMetricFamily, REGISTRY
-from prometheus_client import Gauge
+from psycopg2.extensions import AsIs
+from time import sleep
+import psycopg2
 
 """
     port_number: 3010
@@ -140,15 +141,43 @@ labels=['port_number','port_name','transport_number', 'program_number','program_
 
 """
 
+STATS_SLEEP_TIME = 60  # Time to wait between requests
 
-def write_data(single_record):
-    
-    g = Gauge('video_quality', 'average_video_quality',['port_number','port_name','transport_number', 'program_number','program_name','port_info','port_source_info','device_info'])
-    g.set(single_record['average_video_quality'])
+
 
 def process_json(data):
-    for row in data:
-        print row['program_name']
+    try:
+        conn = psycopg2.connect("dbname='sentry' user='postgres' host='172.16.17.140'")
+
+        cur = conn.cursor()
+        for row in data:
+            row['rpt_start'] = "{0!s} {1!s}".format(row['rpt_start_date_yyyymmdd'], row['rpt_start_time'])
+            row['rpt_end'] = "{0!s} {1!s}".format(row['rpt_end_date_yyyymmdd'], row['rpt_end_time'])
+            del row['rpt_start_date_yyyymmdd']
+            del row['rpt_start_time']
+            del row['rpt_end_date_yyyymmdd']
+            del row['rpt_end_time']
+            fixed_rows = {k: v for k, v in row.items() if v != ''}
+            columns = fixed_rows.keys()
+            values = [fixed_rows[column] for column in columns]
+
+            insert_statement = 'insert into program_data (%s) values %s'
+            #print row
+            #print fixed_rows
+            print cur.mogrify(insert_statement, (AsIs(','.join(columns)), tuple(values)))
+            print cur.execute(insert_statement, (AsIs(','.join(columns)), tuple(values)))
+            conn.commit()
+        if(conn):
+            cur.close()
+            conn.close()
+    except (Exception, psycopg2.Error) as error :
+        print ("Error while connecting to PostgreSQL", error)
+    finally:
+        #closing database connection.
+        if(conn):
+            cur.close()
+            conn.close()
+            print("PostgreSQL connection is closed")
 
 
 
@@ -158,10 +187,9 @@ def main():
     '''
     logger.debug("Entering Get program stats Main")
     parser = argparse.ArgumentParser(description='Import new settings', add_help=True)
-    parser.add_argument('--file','-f' , dest='file', help='File to read', default="Sling.csv")
     parser.add_argument('--system', '-s', dest='system', help='URL of Sentry/s', required=True)
-    parser.add_argument('--userName', '-u', dest='userName', help='userName for login', required=True)
-    parser.add_argument('--password', '-p', dest='password', help='password for login', required=True)
+    parser.add_argument('--user', '-u', dest='userName', help='userName for login', required=True)
+    parser.add_argument('--pass', '-p', dest='password', help='password for login', required=True)
     parser.add_argument('--duration', '-D', dest='duration', help='length of reports in seconds', required=True)
 
 
@@ -178,16 +206,16 @@ def main():
     for Sentry in sentrys:
         print "Doing Sentry: {0!s}".format(Sentry.tekip)
         # Get the stats, this will return JSON
-        try:
-            stats_load = (Sentry.get_program_stats_span(span=results.duration))
-            #logger.debug(stats_load)
-            #print stats_load
+        #try:
+        stats_load = (Sentry.get_program_stats_span(span="1 minute"))
+        #logger.debug(stats_load)
+        #print stats_load
+        process_json(stats_load)
 
-        except:
-            print "Cannot connect to {0!s}".format(Sentry.tekip)
-        #process_json(stats_load)
-        for key, value in stats_load[0].items():
-            print key, value
+        #except:
+        #    print "Cannot connect to {0!s}".format(Sentry.tekip)
+        #for key, value in stats_load[0].items():
+        #    print key, value
 
     
     logger.debug("leaving Get program stats Main")
@@ -196,4 +224,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    while True:
+        main()
+        sleep(STATS_SLEEP_TIME)
+

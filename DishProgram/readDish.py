@@ -87,10 +87,10 @@ def main():
             ProgramDict['sourceIp'] = str(program['SSM1'].strip())
             ProgramDict['groupAddr'] = str(program['MULTICAST'].strip())
             ProgramDict['destPort'] = int(program['PORT'])
-            ProgramDict['name'] = str(program['SLING CALL'].strip()) + str("_PRI")
+            ProgramDict['name'] = str(program['SLING CALL'].strip()) + str("-PRI")
             ProgramDict['desc'] = str(program['MULTICAST'].strip())
             ProgramDict['sentryName'] = sentrys[int(str(program['Sentry Number'].strip()).replace("Sentry ","")) - 1].strip()
-            ProgramDict['providerName'] = str(program['SLING CALL'].strip()) + str("_PRI")
+            ProgramDict['providerName'] = str(program['SLING CALL'].strip()) + str("-PRI")
             if str(program['In Use'].strip()) == 'Yes':
                 ProgramDict['enabled'] = True
             else:
@@ -108,10 +108,10 @@ def main():
                 ProgramDict['sourceIp'] = str(program['SSM2'].strip())
                 ProgramDict['groupAddr'] = str(program['MULTICAST'].strip())
                 ProgramDict['destPort'] = int(program['PORT'])
-                ProgramDict['name'] = str(program['SLING CALL'].strip()) + str("_BU")
+                ProgramDict['name'] = str(program['SLING CALL'].strip()) + str("-BU")
                 ProgramDict['desc'] = str(program['MULTICAST'].strip())
                 ProgramDict['sentryName'] = sentrys[int(str(program['Sentry Number'].strip()).replace("Sentry ","")) - 1].strip()
-                ProgramDict['providerName'] = str(program['SLING CALL'].strip()) + str("_PRI")
+                ProgramDict['providerName'] = str(program['SLING CALL'].strip()) + str("-BU")
                 if str(program['In Use'].strip()) == 'Yes':
                     ProgramDict['enabled'] = True
                 else:

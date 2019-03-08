@@ -149,7 +149,7 @@ class Sentry(object):
                     "params":{{
                     "outputType":"json",
                     "types":[{0!s}],
-                    "span":[{1!s}],
+                    "span":"{1!s}",
                     "availabilityProduct":"sentry"}}
         }}'''.format(types, span, availability_product)
         logger.debug(request)
@@ -168,7 +168,7 @@ class Sentry(object):
             this_response = requests.post(self.requesturl, data=request)
 
             sentryUtils.log_response(this_response)
-            stats_load = json.loads(this_response.text)
+            stats_load = json.loads(this_response.text, parse_int = int, parse_float = int)
             if stats_load.has_key('result'):
                 return stats_load['result']
             elif stats_load.has_key('code'):
