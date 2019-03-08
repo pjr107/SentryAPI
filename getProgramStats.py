@@ -16,6 +16,7 @@ from time import sleep
 import psycopg2
 
 """
+    python getProgramStats.py --system demo.vnm.tek.com:9015 --user Administrator --pass none!! --duration "1 Minute"
     port_number: 3010
     port_name: Port 3010
     transport_number: 1
