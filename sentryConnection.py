@@ -165,23 +165,26 @@ class Sentry(object):
         '''
         logger.debug("Entering request_program_stats")
         while True:
-            this_response = requests.post(self.requesturl, data=request)
+            try:
+                this_response = requests.post(self.requesturl, data=request)
 
-            sentryUtils.log_response(this_response)
-            stats_load = json.loads(this_response.text, parse_int = int, parse_float = int)
-            if stats_load.has_key('result'):
-                return stats_load['result']
-            elif stats_load.has_key('code'):
-                if str(stats_load["code"]) == "-32000": #code -32000 is an early request
-                    print "Made a request too fast waiting a minute"
-                    logger.debug("code: {0!s}".format(stats_load["code"]))
-                    logger.debug("text: {0!s}".format(stats_load["message"]))
-                    sleep(STATS_SLEEP_TIME)
+                sentryUtils.log_response(this_response)
+                stats_load = json.loads(this_response.text, parse_int = int, parse_float = int)
+                if stats_load.has_key('result'):
+                    return stats_load['result']
+                elif stats_load.has_key('code'):
+                    if str(stats_load["code"]) == "-32000": #code -32000 is an early request
+                        print "Made a request too fast waiting a minute"
+                        logger.debug("code: {0!s}".format(stats_load["code"]))
+                        logger.debug("text: {0!s}".format(stats_load["message"]))
+                        sleep(STATS_SLEEP_TIME)
+                    else:
+                        raise Exception("Bad response from Sentry {0!s}".format(this_response.text))
                 else:
-                    raise Exception("Bad response from Sentry {0!s}".format(this_response.text))
-            else:
-                print "error: {0!s}".format(this_response.text)
-        logger.debug("Entering request_program_stats")
+                    print "error: {0!s}".format(this_response.text)
+            except:
+                print "Sentry did not respond. Will try again"
+        logger.debug("Leaving request_program_stats")
         return stats_load
 
 

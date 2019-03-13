@@ -106,9 +106,34 @@ insert into program_data (average_audio_quality,cc_608_error_pct,cc_scte_valid_p
 
 
 
-SELECT port_name, program_number, last(rpt_end) AS report_time, last(availability_percent) AS availability
-FROM program_data GROUP BY port_name, program_number HAVING last(availability_percent) IS NOT NULL AND last(availability_percent) != 0
-ORDER by last(availability_percent)
+SELECT sentry_ip, port_name, program_name, last(availability_percent) AS availability
+FROM program_data GROUP BY sentry_ip, port_name, program_name HAVING last(availability_percent) IS NOT NULL AND last(availability_percent) != 0
+ORDER by last(availability_percent)   
+
+SELECT sentry_ip, port_name, program_name, last(availability_percent) AS availability,
+'http://' || last(sentry_ip)|| '/index.php?page=program_detail&port=' 
+			|| last(port_number)|| '&tsid=' || last(transport_number) 
+			|| '&program=' || last(program_number)|| '&range_type=span&span=1+hour&bl=1' AS url
+FROM program_data GROUP BY sentry_ip, port_name, program_name HAVING last(availability_percent) IS NOT NULL AND last(availability_percent) != 0
+ORDER by last(availability_percent)   
+
+SELECT rpt_end, COUNT(program_name) AS Red
+FROM program_data WHERE availability_percent < 60 
+GROUP BY rpt_end
+HAVING last(availability_percent) IS NOT NULL AND last(availability_percent) != 0
+
+
+SELECT COALESCE(east.program_name,west.program_name), east.availability as east, west.availability as west
+FROM (SELECT program_name, last(rpt_end) AS report_time, last(availability_percent) AS availability
+	  FROM program_data WHERE sentry_ip = 'demo.vnm.tek.com:9015' 
+	  GROUP BY program_name HAVING last(availability_percent) IS NOT NULL AND last(availability_percent) != 0
+	  ORDER by last(availability_percent)) east
+FULL JOIN (SELECT program_name, last(rpt_end) AS report_time, last(availability_percent) AS availability
+			FROM program_data WHERE sentry_ip = 'demo.vnm.tek.com:9017'
+			GROUP BY program_name HAVING last(availability_percent) IS NOT NULL AND last(availability_percent) != 0
+			ORDER by last(availability_percent)) west
+ON (east.program_name = west.program_name)
+ORDER BY (COALESCE(east.availability,100) + COALESCE(west.availability,100))
 
 
 http://demo.vnm.tek.com:9015/index.php?page=program_detail&port=3006&tsid=9&program=1&range_type=span&span=1+hour&bl=1
