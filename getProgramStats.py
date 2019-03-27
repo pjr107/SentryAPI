@@ -10,6 +10,7 @@ import logging
 import json
 #import prometheus_client
 import sentryConnection
+import datetime
 from sentryLogging import logger
 from psycopg2.extensions import AsIs
 from time import sleep
@@ -166,8 +167,8 @@ def process_json(data, Sentry):
             insert_statement = 'insert into program_data (%s) values %s'
             #print row
             #print fixed_rows
-            print cur.mogrify(insert_statement, (AsIs(','.join(columns)), tuple(values)))
-            print cur.execute(insert_statement, (AsIs(','.join(columns)), tuple(values)))
+            cur.mogrify(insert_statement, (AsIs(','.join(columns)), tuple(values)))
+            cur.execute(insert_statement, (AsIs(','.join(columns)), tuple(values)))
             conn.commit()
         if(conn):
             cur.close()
@@ -204,29 +205,36 @@ def main():
                                                medius=False,
                                                user=results.userName,
                                                passwd=results.password))
+    while True:
+        end = datetime.datetime.now()
+        start = end - datetime.timedelta(seconds=STATS_SLEEP_TIME)
+        for Sentry in sentrys:
+            print ("Doing Sentry: {0!s} Start: {1!s} End:{2!s}".format(Sentry.tekip,
+                                start.isoformat(), end.isoformat()))
+            # Get the stats, this will return JSON
+            #try:
+            stats_load = Sentry.get_program_stats(
+                        types="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
+                        fromdate=start.date(),
+                        todate=end.date(),
+                        fromtime=start.strftime('%H:%M:00'),
+                        totime=end.strftime('%H:%M:00'))
+            #stats_load = (Sentry.get_program_stats_span(span="1 minute"))
+            #logger.debug(stats_load)
+            #print stats_load
+            process_json(stats_load, Sentry.tekip)
 
-    for Sentry in sentrys:
-        print "Doing Sentry: {0!s}".format(Sentry.tekip)
-        # Get the stats, this will return JSON
-        #try:
-        stats_load = (Sentry.get_program_stats_span(span="1 minute"))
-        #logger.debug(stats_load)
-        #print stats_load
-        process_json(stats_load, Sentry.tekip)
+            #except:
+            #    print "Cannot connect to {0!s}".format(Sentry.tekip)
+            #for key, value in stats_load[0].items():
+            #    print key, value
 
-        #except:
-        #    print "Cannot connect to {0!s}".format(Sentry.tekip)
-        #for key, value in stats_load[0].items():
-        #    print key, value
-
-    
-    logger.debug("leaving Get program stats Main")
-
+        
+        logger.debug("leaving Get program stats Main")
+        sleep(STATS_SLEEP_TIME)
 
 
 
 if __name__ == '__main__':
-    while True:
-        main()
-        sleep(STATS_SLEEP_TIME)
+    main()
 
