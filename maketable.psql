@@ -97,13 +97,19 @@ CREATE TABLE program_data(
     PRIMARY KEY(rpt_end,port_number,program_number)
 );
 
+[root@charlie SentryAPI]# python getProgramStats.py --user pjr --pass wombat88 --system "demo.vnm.tek.com:9015,demo.vnm.tek.com:9017" -D 60
+
 
 
 insert into program_data (average_audio_quality,cc_608_error_pct,cc_scte_valid_pct,cc_608_valid_pct,primary_audio_pid_number,availability_percent,audio_pid_lang,dist_from_dialnorm_2nd,closed_caption_percent,port_name,distance_from_dialnorm,min_gop_length,port_info,max_aqoe_2nd,rpt_end,audio_mode,used_backup,cc_608_pct,audio_pid_lang_2nd,audio_pid_number_2nd,min_aqoe_2nd,cc_error_pct,cc_708_pct,average_gop_length,cc_valid_pct,device_info,primary_video_pid_number,min_volume_level,rpt_start,error_seconds,hd_flag,min_volume_lvl_2nd,min_bitrate,max_video_quality,audio_format,cc_708_valid_pct,avg_aqoe_2nd,discontinuity_count,average_video_quality,ad_cue_out_events,cc_708_error_pct,max_volume_level,video_format,program_name,max_volume_lvl_2nd,max_gop_length,max_bitrate,average_volume_level,program_number,min_video_quality,cc_scte_pct,audio_format_2nd,avg_volume_lvl_2nd,average_bitrate,avg_dialnorm_2nd,min_audio_quality,scrambled,transport_number,cc_scte_error_pct,port_number,average_dialnorm,max_audio_quality,port_source_info)
 
   values ('100.0000', '0.0214', '100.0000', '99.9786', '61', '99.138889', 'eng', '-2.1910', '100.0000', 'Port 3007', '-3.3357', '3', '225.21.8.1:8000', '100', '20190307 12:17:44-08:00', 'BS.1770-3/3 sec', 'N', '100.0000', 'spa', '62', '100', '0.4063', '100.0000', '14.77', '99.5937', 'LAN 2', '60', '-67.8182', '20190307 11:17:44-08:00', '31', 'SD', '-70.1111', '1493179.0000', '100', 'Dolby AC3', '99.6150', '100.0000', '0', '99.2800', '0', '0.3850', '-21.3249', 'MPEG-2', '1_1 HBO', '-20.9675', '18', '4429963.0000', '-30.3357', '1', '85', '100.0000', 'Dolby AC3', '-29.1910', '2687978.7138', '-27.0000', '100', 'N', '9', '0.0000', '3007', '-27.0000', '100', '*')
 
+http://demo.vnm.tek.com:9015/thumbnails/current/prt3004pgm4.bmp
 
+http://localhost:3000/d/qIw2Eljiz/program-detail?orgId=1&from=now-1h&to=now-1m&var-programs=demo.vnm.tek.com:9015301-FOOD%20HD&var-sentry_list=demo.vnm.tek.com:9015&var-graph_list=average_bitrate&var-program_list=TruTV%20HD
+
+http://localhost:3000/d/qIw2Eljiz/program-detail?tab=visualization&orgId=1&var_prt=3004&var_pgm=4
 
 
 SELECT sentry_ip, port_name, program_name, last(availability_percent) AS availability

@@ -87,10 +87,10 @@ def main():
             ProgramDict['sourceIp'] = str(program['SSM1'].strip())
             ProgramDict['groupAddr'] = str(program['MULTICAST'].strip())
             ProgramDict['destPort'] = int(program['PORT'])
-            ProgramDict['name'] = str(program['SLING CALL'].strip()) + str("-PRI")
-            ProgramDict['desc'] = str(program['MULTICAST'].strip())
+            ProgramDict['name'] = str(program['SLING CALL'].strip()) + str("-Pri")
+            ProgramDict['desc'] = str(program['SSM1'].strip())
             ProgramDict['sentryName'] = sentrys[int(str(program['Sentry Number'].strip()).replace("Sentry ","")) - 1].strip()
-            ProgramDict['providerName'] = str(program['SLING CALL'].strip()) + str("-PRI")
+            ProgramDict['providerName'] = str(program['SLING CALL'].strip()) + str("-Pri")
             if str(program['In Use'].strip()) == 'Yes':
                 ProgramDict['enabled'] = True
             else:
@@ -102,26 +102,29 @@ def main():
             #write dict to list
             UpdateMPEGInput.append(ProgramDict)
             #Backup monitoring
-            if not results.testing:
-                ProgramDict = {'portnum':int((program['Backup Port']).replace("Port ",""))}
+            ProgramDict = {'sourceIp':str(program['SSM2'].strip())}
+            if results.testing: # for testing fit the ports under 1000
+                ProgramDict['portnum'] = int((program['Backup Port']).replace("Port ","")) - 500
+                ProgramDict['portNumber'] = int((program['Backup Port']).replace("Port ","")) - 500
+            else:
+                ProgramDict['portnum'] = int((program['Backup Port']).replace("Port ",""))
                 ProgramDict['portNumber'] = int((program['Backup Port']).replace("Port ",""))
-                ProgramDict['sourceIp'] = str(program['SSM2'].strip())
-                ProgramDict['groupAddr'] = str(program['MULTICAST'].strip())
-                ProgramDict['destPort'] = int(program['PORT'])
-                ProgramDict['name'] = str(program['SLING CALL'].strip()) + str("-BU")
-                ProgramDict['desc'] = str(program['MULTICAST'].strip())
-                ProgramDict['sentryName'] = sentrys[int(str(program['Sentry Number'].strip()).replace("Sentry ","")) - 1].strip()
-                ProgramDict['providerName'] = str(program['SLING CALL'].strip()) + str("-BU")
-                if str(program['In Use'].strip()) == 'Yes':
-                    ProgramDict['enabled'] = True
-                else:
-                    ProgramDict['enabled'] = False
-                ProgramDict['Audio_1'] = str(program['Audio_1'].strip())
-                ProgramDict['Audio_2'] = str(program['Audio_2'].strip())
-                ProgramDict['userAdded'] = 'true'
-                ProgramDict['programNumber'] = int(-1)
-                #write dict to list
-                UpdateMPEGInput.append(ProgramDict)
+            ProgramDict['groupAddr'] = str(program['MULTICAST'].strip())
+            ProgramDict['destPort'] = int(program['PORT'])
+            ProgramDict['name'] = str(program['SLING CALL'].strip()) + str("-Bu")
+            ProgramDict['desc'] = str(program['SSM2'].strip())
+            ProgramDict['sentryName'] = sentrys[int(str(program['Sentry Number'].strip()).replace("Sentry ","")) - 1].strip()
+            ProgramDict['providerName'] = str(program['SLING CALL'].strip()) + str("-Bu")
+            if str(program['In Use'].strip()) == 'Yes':
+                ProgramDict['enabled'] = True
+            else:
+                ProgramDict['enabled'] = False
+            ProgramDict['Audio_1'] = str(program['Audio_1'].strip())
+            ProgramDict['Audio_2'] = str(program['Audio_2'].strip())
+            ProgramDict['userAdded'] = 'true'
+            ProgramDict['programNumber'] = int(-1)
+            #write dict to list
+            UpdateMPEGInput.append(ProgramDict)
 
     #print UpdateMPEGInput
     if logger.getEffectiveLevel() <= logging.DEBUG:
