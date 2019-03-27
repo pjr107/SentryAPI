@@ -160,6 +160,11 @@ def process_json(data, Sentry):
             del row['rpt_start_time']
             del row['rpt_end_date_yyyymmdd']
             del row['rpt_end_time']
+            row['url'] = '''http://{0!s}/index.php?page=program_detail&port={1!s}&tsid={2!s}
+                            &program={3!s}&range_type=span&span=1+hour&bl=1'''.format(row['sentry_ip'],
+                                                                                    row['port_number'],
+                                                                                    row['transport_number'],
+                                                                                    row['program_number'])
             fixed_rows = {k: v for k, v in row.items() if v != ''}
             columns = fixed_rows.keys()
             values = [fixed_rows[column] for column in columns]
