@@ -143,3 +143,26 @@ ORDER BY (COALESCE(east.availability,100) + COALESCE(west.availability,100))
 
 
 http://demo.vnm.tek.com:9015/index.php?page=program_detail&port=3006&tsid=9&program=1&range_type=span&span=1+hour&bl=1
+
+
+
+leaving Get program stats Main
+Doing Sentry: demo.vnm.tek.com:9015 Start: 2019-03-28T11:53:20.697014 End:2019-03-28T11:54:20.697014
+Entering get_program_stats
+{
+            "id":1,
+            "jsonrpc":2.0,
+            "method":"Report.GetProgramStatistics",
+                    "params":{
+                    "outputType":"json",
+                    "fromDate":"2019-03-28",
+                    "fromTime":"11:53:00",
+                    "toDate":"2019-03-28",
+                    "toTime":"11:54:00",
+                    "types":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],
+                    "availabilityProduct":"sentry"}
+        }
+
+
+
+ {u'primary_audio_pid_number': u'430', u'frag_httpstat_600': u'', u'transport_number': u'1', u'cc_error_pct': u'0.0000', u'error_seconds': u'', u'cc_708_valid_pct': u'0.0000', u'min_frag_load_time': u'', u'discontinuity_count': u'0', u'avg_frag_load_time': u'', u'cc_708_error_pct': u'0.0000', u'frag_httpstat_100': u'', u'rep_index': u'', u'avg_frag_duration': u'', u'average_dialnorm': u'', u'cc_608_valid_pct': u'0.0000', u'frag_httpstat_500': u'', u'port_name': u'ABC Family input', u'port_info': u'225.21.5.1:8000', u'avg_frag_load_bitrate': u'', u'audio_pid_lang_2nd': u'', u'audio_pid_number_2nd': u'431', u'rpt_end_date_yyyymmdd': u'20190328', u'average_gop_length': u'', u'min_perceptual_video_quality': u'', u'max_frag_load_time': u'', u'primary_video_pid_number': u'420', u'manifest_bitrate': u'', u'max_idr': u'', u'average_video_quality': u'', u'max_perceptual_video_quality': u'', u'program_name': u'Suria (HD)', u'max_volume_lvl_2nd': u'', u'avg_frag_load_latency': u'', u'max_gop_length': u'', u'average_volume_level': u'', u'average_perceptual_video_quality': u'', u'audio_format_2nd': u'MPEG-4', u'average_bitrate': u'', u'min_ebp': u'', u'min_idr': u'', u'rpt_start_time': u'11:53:00-07:00', u'average_audio_quality': u'', u'cc_608_error_pct': u'0.0000', u'cc_scte_valid_pct': u'0.0000', u'max_frag_load_bitrate': u'', u'frag_httpstat_400': u'', u'availability_percent': u'', u'dist_from_dialnorm_2nd': u'', u'closed_caption_percent': u'0.0000', u'port_number': u'9', u'min_gop_length': u'', u'max_aqoe_2nd': u'', u'used_backup': u'N', u'audio_pid_lang': u'MSA', u'cc_valid_pct': u'0.0000', u'device_info': u'LAN 2', u'max_bitrate': u'', u'max_frag_load_latency': u'', u'audio_format': u'MPEG-4', u'max_ebp': u'', u'min_frag_load_latency': u'', u'video_format': u'MPEG-4 AVC', u'min_volume_level': u'', u'min_video_quality': u'', u'avg_dialnorm_2nd': u'', u'min_audio_quality': u'', u'cc_scte_error_pct': u'0.0000', u'max_volume_level': u'', u'min_frag_load_bitrate': u'', u'port_source_info': u'*', u'rpt_start_date_yyyymmdd': u'20190328', u'min_aqoe_2nd': u'', u'avg_idr': u'', u'distance_from_dialnorm': u'', u'rpt_end_time': u'11:54:00-07:00', u'frag_httpstat_300': u'', u'cc_608_pct': u'0.0000', u'avg_frag_size': u'', u'min_bitrate': u'', u'max_audio_quality': u'', u'cc_708_pct': u'0.0000', u'avg_ebp': u'', u'min_volume_lvl_2nd': u'', u'hd_flag': u'HD', u'audio_mode': u'BS.1770-3/10 sec', u'avg_aqoe_2nd': u'', u'ad_cue_out_events': u'0', u'avg_volume_lvl_2nd': u'', u'frag_httpstat_200': u'', u'program_number': u'4', u'max_frag_size': u'', u'max_video_quality': u'', u'scrambled': u'N', u'cc_scte_pct': u'0.0000', u'min_frag_size': u''}]

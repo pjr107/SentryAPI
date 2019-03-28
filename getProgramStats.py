@@ -211,7 +211,7 @@ def main():
                                                user=results.userName,
                                                passwd=results.password))
     while True:
-        end = datetime.datetime.now()
+        end = datetime.datetime.now() - datetime.timedelta(hours=3)
         start = end - datetime.timedelta(seconds=STATS_SLEEP_TIME)
         for Sentry in sentrys:
             print ("Doing Sentry: {0!s} Start: {1!s} End:{2!s}".format(Sentry.tekip,
