@@ -5,9 +5,10 @@ Created on Aug 13 2018
 @author: Patrick Rosini
 '''
 import logging
+from datetime import datetime
 
 logging.basicConfig(filename='debug.json',
-                        filemode='a',
+                        filemode='w',
                         formatter='%(levelname)-8s: %(module)-12s %(lineno)4d: %(message)s',
                         level=logging.DEBUG)
 logger = logging.getLogger(__name__)

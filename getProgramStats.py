@@ -160,7 +160,7 @@ def process_json(data, Sentry):
             del row['rpt_start_time']
             del row['rpt_end_date_yyyymmdd']
             del row['rpt_end_time']
-            row['url'] = '''http://{0!s}/index.php?page=program_detail&port={1!s}&tsid={2!s}
+            row['url'] = '''http://{0!s}/index.php?page=program_detail&port={1!s}&tsid={2!s}\
                             &program={3!s}&range_type=span&span=1+hour&bl=1'''.format(row['sentry_ip'],
                                                                                     row['port_number'],
                                                                                     row['transport_number'],
@@ -169,7 +169,7 @@ def process_json(data, Sentry):
             columns = fixed_rows.keys()
             values = [fixed_rows[column] for column in columns]
 
-            insert_statement = 'insert into program_data (%s) values %s'
+            insert_statement = 'insert into program_data_time (%s) values %s'
             #print row
             #print fixed_rows
             cur.mogrify(insert_statement, (AsIs(','.join(columns)), tuple(values)))
@@ -204,6 +204,7 @@ def main():
     results = parser.parse_args()
 
     sentrys = []
+    nextStartTime = datetime.datetime.now() + datetime.timedelta(seconds = STATS_SLEEP_TIME)
 
     for item in results.system.split(','):
         sentrys.append(sentryConnection.Sentry(tekip=(item.strip()),
@@ -236,7 +237,9 @@ def main():
 
         
         logger.debug("leaving Get program stats Main")
-        sleep(STATS_SLEEP_TIME)
+        if nextStartTime > datetime.datetime.now():
+            delta = nextStartTime - datetime.datetime.now()
+            sleep(delta.seconds)
 
 
 

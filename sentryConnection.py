@@ -227,7 +227,7 @@ class Sentry(object):
         for num, port in enumerate(UpdateMPEG, start=1):
             InputSettings += str(json.dumps(port))
             if num % BreakNumber == 0 or num == len(UpdateMPEG):
-                print InputSettings
+                logger.debug(InputSettings)
                 request = '''{{"jsonrpc":2.0,
                     "method":"Input.UpdateMPEGInput",
                     "params":
@@ -276,7 +276,7 @@ class Sentry(object):
         for num, port in enumerate(ProgramMapping, start=1):
             InputSettings += str(json.dumps(port))
             if num % BreakNumber == 0 or num == len(ProgramMapping):
-                print InputSettings
+                logger.debug(InputSettings)
                 request = '''{{
                     "jsonrpc":2.0,
                     "method":"Program.SetProgramMapping",
@@ -333,6 +333,27 @@ class Sentry(object):
                 ]}},
             "id":1
             }}
+
+            {
+                "jsonrpc":2.0,
+                "method":"Audio.DeletePrimaryPIDSettings",
+                "params":{
+                    "inputType":"json",
+                    "inputSettings":[{
+                        "sentryName": "192.0.0.0",
+                        "portNumber":"1",
+                        "programNumber":"10"
+                        },
+                        {
+                        "sentryName": "192.0.0.0",
+                        "portNumber":"2",
+                        "programNumber":"10"
+                        }
+                    ]
+                },
+                "id":1
+                }
+                    
         """
         logger.debug("Entering updatePrimaryAudio")
         for program in programMapping:
@@ -356,7 +377,23 @@ class Sentry(object):
                                 ]}},
                             "id":1
                             }}""".format(program['sentryName'],program['portNumber'],program['programNumber'],audio_select)
-                logger.debug(request)
-                sentryUtils.log_response(requests.post(self.requesturl, data=request))
+            else:
+                request="""{{
+                            "jsonrpc":2.0,
+                            "method":"Audio.DeletePrimaryPIDSettings",
+                            "params":{{
+                                "inputType":"json",
+                                "inputSettings":[{{
+                                    "sentryName": "{0!s}",
+                                    "portNumber":"{1!s}",
+                                    "programNumber":"{2!s}"
+                                    }
+                                ]
+                            }},
+                            "id":1
+                            }}
+                                """.format(program['sentryName'],program['portNumber'],program['programNumber'])
+            logger.debug(request)
+            sentryUtils.log_response(requests.post(self.requesturl, data=request))
         logger.debug("Leaving updatePrimaryAudio")
 

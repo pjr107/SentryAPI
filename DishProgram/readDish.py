@@ -79,7 +79,7 @@ def main():
 
     for program in ProgramList:
         if logger.getEffectiveLevel() <= logging.DEBUG:
-            print program
+            logger.debug(program)
         if program['SLING CALL'] and (not results.testing or int(program['Sentry Number'].strip().replace("Sentry ","")) <= 3): # three to stay within my test system
             #primary monitoring
             ProgramDict = {'portnum':int((program['Primary Port']).replace("Port ",""))}
@@ -133,6 +133,7 @@ def main():
     
     medius.UpdateMPEGInput(UpdateMPEGInput, BreakNumber=40)
     medius.SetProgramMapping(UpdateMPEGInput, BreakNumber=40)
+    medius.deletePrimaryPIDSettings(sentrys)
     medius.updatePrimaryAudio(UpdateMPEGInput)
     
  

@@ -5,8 +5,9 @@ Created on Aug 13 2018
 @author: Patrick Rosini
 '''
 import logging
+from datetime import datetime
 
-logging.basicConfig(filename='debug.json',
+logging.basicConfig(filename='debug.{0!s}.json'.format(datetime.strftime('%d/%m/%Y_%T')),
                         filemode='a',
                         formatter='%(levelname)-8s: %(module)-12s %(lineno)4d: %(message)s',
                         level=logging.DEBUG)

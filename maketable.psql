@@ -97,8 +97,6 @@ CREATE TABLE program_data(
     PRIMARY KEY(rpt_end,port_number,program_number)
 );
 
-[root@charlie SentryAPI]# python getProgramStats.py --user pjr --pass wombat88 --system "demo.vnm.tek.com:9015,demo.vnm.tek.com:9017" -D 60
-
 
 
 insert into program_data (average_audio_quality,cc_608_error_pct,cc_scte_valid_pct,cc_608_valid_pct,primary_audio_pid_number,availability_percent,audio_pid_lang,dist_from_dialnorm_2nd,closed_caption_percent,port_name,distance_from_dialnorm,min_gop_length,port_info,max_aqoe_2nd,rpt_end,audio_mode,used_backup,cc_608_pct,audio_pid_lang_2nd,audio_pid_number_2nd,min_aqoe_2nd,cc_error_pct,cc_708_pct,average_gop_length,cc_valid_pct,device_info,primary_video_pid_number,min_volume_level,rpt_start,error_seconds,hd_flag,min_volume_lvl_2nd,min_bitrate,max_video_quality,audio_format,cc_708_valid_pct,avg_aqoe_2nd,discontinuity_count,average_video_quality,ad_cue_out_events,cc_708_error_pct,max_volume_level,video_format,program_name,max_volume_lvl_2nd,max_gop_length,max_bitrate,average_volume_level,program_number,min_video_quality,cc_scte_pct,audio_format_2nd,avg_volume_lvl_2nd,average_bitrate,avg_dialnorm_2nd,min_audio_quality,scrambled,transport_number,cc_scte_error_pct,port_number,average_dialnorm,max_audio_quality,port_source_info)
@@ -106,6 +104,8 @@ insert into program_data (average_audio_quality,cc_608_error_pct,cc_scte_valid_p
   values ('100.0000', '0.0214', '100.0000', '99.9786', '61', '99.138889', 'eng', '-2.1910', '100.0000', 'Port 3007', '-3.3357', '3', '225.21.8.1:8000', '100', '20190307 12:17:44-08:00', 'BS.1770-3/3 sec', 'N', '100.0000', 'spa', '62', '100', '0.4063', '100.0000', '14.77', '99.5937', 'LAN 2', '60', '-67.8182', '20190307 11:17:44-08:00', '31', 'SD', '-70.1111', '1493179.0000', '100', 'Dolby AC3', '99.6150', '100.0000', '0', '99.2800', '0', '0.3850', '-21.3249', 'MPEG-2', '1_1 HBO', '-20.9675', '18', '4429963.0000', '-30.3357', '1', '85', '100.0000', 'Dolby AC3', '-29.1910', '2687978.7138', '-27.0000', '100', 'N', '9', '0.0000', '3007', '-27.0000', '100', '*')
 
 http://demo.vnm.tek.com:9015/thumbnails/current/prt3004pgm4.bmp
+
+http://localhost:3000/d/qIw2Eljiz/program-detail?tab=visualization&orgId=1&refresh=30s&var-pgm=prt3000pgm1.bmp
 
 http://localhost:3000/d/qIw2Eljiz/program-detail?orgId=1&from=now-1h&to=now-1m&var-programs=demo.vnm.tek.com:9015301-FOOD%20HD&var-sentry_list=demo.vnm.tek.com:9015&var-graph_list=average_bitrate&var-program_list=TruTV%20HD
 
@@ -146,23 +146,36 @@ http://demo.vnm.tek.com:9015/index.php?page=program_detail&port=3006&tsid=9&prog
 
 
 
-leaving Get program stats Main
-Doing Sentry: demo.vnm.tek.com:9015 Start: 2019-03-28T11:53:20.697014 End:2019-03-28T11:54:20.697014
-Entering get_program_stats
-{
-            "id":1,
-            "jsonrpc":2.0,
-            "method":"Report.GetProgramStatistics",
-                    "params":{
-                    "outputType":"json",
-                    "fromDate":"2019-03-28",
-                    "fromTime":"11:53:00",
-                    "toDate":"2019-03-28",
-                    "toTime":"11:54:00",
-                    "types":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],
-                    "availabilityProduct":"sentry"}
-        }
+http://Administrator:none!!:demo.vnm.tek.com:9015/thumbnails/current/prt3004pgm2.bmp?tm=1553869960
+
+ __now:Date.now(),
+
+
+ wget https://yum.postgresql.org/9.6/redhat/rhel-7.4-x86_64/pgdg-centos96-9.6-3.noarch.rpm
+rpm -i pgdg-centos96-9.6-3.noarch.rpm
+
+yum install postgresql96-server postgresql96-contrib
+/usr/pgsql-9.6/bin/postgresql96-setup initdb
+
+mv /usr/bin/pg_ctl{,-orig}
+echo '#!/bin/bash' > /usr/bin/pg_ctl
+echo '"$0"-orig "${@/unix_socket_directory/unix_socket_directories}"' >> /usr/bin/pg_ctl
+chmod +x /usr/bin/pg_ctl
+
+
+python getProgramStats.py --user pjr --pass wombat88 --system "demo.vnm.tek.com:9015,demo.vnm.tek.com:9017" -D 60
 
 
 
- {u'primary_audio_pid_number': u'430', u'frag_httpstat_600': u'', u'transport_number': u'1', u'cc_error_pct': u'0.0000', u'error_seconds': u'', u'cc_708_valid_pct': u'0.0000', u'min_frag_load_time': u'', u'discontinuity_count': u'0', u'avg_frag_load_time': u'', u'cc_708_error_pct': u'0.0000', u'frag_httpstat_100': u'', u'rep_index': u'', u'avg_frag_duration': u'', u'average_dialnorm': u'', u'cc_608_valid_pct': u'0.0000', u'frag_httpstat_500': u'', u'port_name': u'ABC Family input', u'port_info': u'225.21.5.1:8000', u'avg_frag_load_bitrate': u'', u'audio_pid_lang_2nd': u'', u'audio_pid_number_2nd': u'431', u'rpt_end_date_yyyymmdd': u'20190328', u'average_gop_length': u'', u'min_perceptual_video_quality': u'', u'max_frag_load_time': u'', u'primary_video_pid_number': u'420', u'manifest_bitrate': u'', u'max_idr': u'', u'average_video_quality': u'', u'max_perceptual_video_quality': u'', u'program_name': u'Suria (HD)', u'max_volume_lvl_2nd': u'', u'avg_frag_load_latency': u'', u'max_gop_length': u'', u'average_volume_level': u'', u'average_perceptual_video_quality': u'', u'audio_format_2nd': u'MPEG-4', u'average_bitrate': u'', u'min_ebp': u'', u'min_idr': u'', u'rpt_start_time': u'11:53:00-07:00', u'average_audio_quality': u'', u'cc_608_error_pct': u'0.0000', u'cc_scte_valid_pct': u'0.0000', u'max_frag_load_bitrate': u'', u'frag_httpstat_400': u'', u'availability_percent': u'', u'dist_from_dialnorm_2nd': u'', u'closed_caption_percent': u'0.0000', u'port_number': u'9', u'min_gop_length': u'', u'max_aqoe_2nd': u'', u'used_backup': u'N', u'audio_pid_lang': u'MSA', u'cc_valid_pct': u'0.0000', u'device_info': u'LAN 2', u'max_bitrate': u'', u'max_frag_load_latency': u'', u'audio_format': u'MPEG-4', u'max_ebp': u'', u'min_frag_load_latency': u'', u'video_format': u'MPEG-4 AVC', u'min_volume_level': u'', u'min_video_quality': u'', u'avg_dialnorm_2nd': u'', u'min_audio_quality': u'', u'cc_scte_error_pct': u'0.0000', u'max_volume_level': u'', u'min_frag_load_bitrate': u'', u'port_source_info': u'*', u'rpt_start_date_yyyymmdd': u'20190328', u'min_aqoe_2nd': u'', u'avg_idr': u'', u'distance_from_dialnorm': u'', u'rpt_end_time': u'11:54:00-07:00', u'frag_httpstat_300': u'', u'cc_608_pct': u'0.0000', u'avg_frag_size': u'', u'min_bitrate': u'', u'max_audio_quality': u'', u'cc_708_pct': u'0.0000', u'avg_ebp': u'', u'min_volume_lvl_2nd': u'', u'hd_flag': u'HD', u'audio_mode': u'BS.1770-3/10 sec', u'avg_aqoe_2nd': u'', u'ad_cue_out_events': u'0', u'avg_volume_lvl_2nd': u'', u'frag_httpstat_200': u'', u'program_number': u'4', u'max_frag_size': u'', u'max_video_quality': u'', u'scrambled': u'N', u'cc_scte_pct': u'0.0000', u'min_frag_size': u''}]
+
+SELECT COALESCE(east.program_name,west.program_name) AS program_name, east.availability as east, west.availability as west, east.program, west.program
+FROM (SELECT program_name, last(rpt_end) AS report_time, last(availability_percent) AS availability, 'demo.vnm.tek.com:9015' || program_name AS program
+	  FROM program_data WHERE sentry_ip = 'demo.vnm.tek.com:9015' 
+	  GROUP BY program_name HAVING last(availability_percent) != 0
+	  ORDER by last(availability_percent)) east
+FULL JOIN (SELECT program_name, last(rpt_end) AS report_time, last(availability_percent) AS availability, 'demo.vnm.tek.com:9017' || program_name AS program
+			FROM program_data WHERE sentry_ip = 'demo.vnm.tek.com:9017'
+			GROUP BY program_name HAVING last(availability_percent) != 0
+			ORDER by last(availability_percent)) west
+ON (east.program_name = west.program_name)
+ORDER BY (COALESCE(east.availability,100) + COALESCE(west.availability,100))
