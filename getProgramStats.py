@@ -204,7 +204,6 @@ def main():
     results = parser.parse_args()
 
     sentrys = []
-    nextStartTime = datetime.datetime.now() + datetime.timedelta(seconds = STATS_SLEEP_TIME)
 
     for item in results.system.split(','):
         sentrys.append(sentryConnection.Sentry(tekip=(item.strip()),
@@ -213,6 +212,7 @@ def main():
                                                passwd=results.password))
     while True:
         end = datetime.datetime.now() - datetime.timedelta(hours=3)
+        nextStartTime = datetime.datetime.now() + datetime.timedelta(seconds = STATS_SLEEP_TIME)
         start = end - datetime.timedelta(seconds=STATS_SLEEP_TIME)
         for Sentry in sentrys:
             print ("Doing Sentry: {0!s} Start: {1!s} End:{2!s}".format(Sentry.tekip,
@@ -237,9 +237,12 @@ def main():
 
         
         logger.debug("leaving Get program stats Main")
+        '''print nextStartTime 
+        print datetime.datetime.now()
+        print nextStartTime - datetime.datetime.now()
         if nextStartTime > datetime.datetime.now():
-            delta = nextStartTime - datetime.datetime.now()
-            sleep(delta.seconds)
+            delta = nextStartTime - datetime.datetime.now()'''
+        sleep(STATS_SLEEP_TIME)
 
 
 
